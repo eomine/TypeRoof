@@ -1,0 +1,725 @@
+{
+  "activeState": {
+    "t": "1",
+    "duration": "10",
+    "isLoop": "0",
+    "perpetual": "1",
+    "playing": "0",
+    "keyMoments": [
+      {
+        "label": "Key Moment 1",
+        "duration": "1",
+        "isActive": "1",
+        "autoOPSZ": "0",
+        "textColor": {
+          "instance": {
+            "R": "100.00000",
+            "G": "100.00000",
+            "B": "100.00000"
+          },
+          "colorTypeKey": "RGB"
+        },
+        "stageBackgroundColor": {
+          "instance": {
+            "R": "0.00000",
+            "G": "34.00000",
+            "B": "64.00000"
+          },
+          "colorTypeKey": "RGB"
+        }
+      }
+    ],
+    "activeActors": [
+      {
+        "instance": {
+          "isLoop": "0",
+          "label": "Variable Text Animation",
+          "keyMoments": [
+            {
+              "label": "Default 1",
+              "duration": "1",
+              "isActive": "1",
+              "autoOPSZ": "0",
+              "axesLocations": [
+                [
+                  "XOPQ",
+                  "96"
+                ],
+                [
+                  "YOPQ",
+                  "79"
+                ],
+                [
+                  "XTRA",
+                  "463"
+                ],
+                [
+                  "XTUR",
+                  "463"
+                ],
+                [
+                  "XTUD",
+                  "463"
+                ],
+                [
+                  "YTUC",
+                  "728"
+                ],
+                [
+                  "YOPE",
+                  "79"
+                ]
+              ]
+            },
+            {
+              "label": "Default 2",
+              "duration": "1",
+              "isActive": "1",
+              "autoOPSZ": "0",
+              "axesLocations": [
+                [
+                  "XOPQ",
+                  "96"
+                ],
+                [
+                  "YOPQ",
+                  "79"
+                ],
+                [
+                  "XTRA",
+                  "463"
+                ],
+                [
+                  "XTUR",
+                  "463"
+                ],
+                [
+                  "XTUD",
+                  "463"
+                ],
+                [
+                  "YTUC",
+                  "728"
+                ],
+                [
+                  "YOPE",
+                  "79"
+                ]
+              ]
+            },
+            {
+              "label": "XOPQ",
+              "duration": "1",
+              "isActive": "1",
+              "autoOPSZ": "0",
+              "axesLocations": [
+                [
+                  "XOPQ",
+                  "196"
+                ],
+                [
+                  "YOPQ",
+                  "79"
+                ],
+                [
+                  "XTRA",
+                  "463"
+                ],
+                [
+                  "XTUR",
+                  "463"
+                ],
+                [
+                  "XTUD",
+                  "463"
+                ],
+                [
+                  "YTUC",
+                  "728"
+                ],
+                [
+                  "YOPE",
+                  "79"
+                ]
+              ]
+            },
+            {
+              "label": "YOPQ",
+              "duration": "1",
+              "isActive": "1",
+              "autoOPSZ": "0",
+              "axesLocations": [
+                [
+                  "XOPQ",
+                  "196"
+                ],
+                [
+                  "YOPQ",
+                  "179"
+                ],
+                [
+                  "XTRA",
+                  "463"
+                ],
+                [
+                  "XTUR",
+                  "463"
+                ],
+                [
+                  "XTUD",
+                  "463"
+                ],
+                [
+                  "YTUC",
+                  "728"
+                ],
+                [
+                  "YOPE",
+                  "79"
+                ]
+              ]
+            },
+            {
+              "label": "XTRA",
+              "duration": "1",
+              "isActive": "1",
+              "autoOPSZ": "0",
+              "axesLocations": [
+                [
+                  "XOPQ",
+                  "196"
+                ],
+                [
+                  "YOPQ",
+                  "179"
+                ],
+                [
+                  "XTRA",
+                  "563"
+                ],
+                [
+                  "XTUR",
+                  "463"
+                ],
+                [
+                  "XTUD",
+                  "463"
+                ],
+                [
+                  "YTUC",
+                  "728"
+                ],
+                [
+                  "YOPE",
+                  "79"
+                ]
+              ]
+            },
+            {
+              "label": "XTUR",
+              "duration": "1",
+              "isActive": "1",
+              "autoOPSZ": "0",
+              "axesLocations": [
+                [
+                  "XOPQ",
+                  "196"
+                ],
+                [
+                  "YOPQ",
+                  "179"
+                ],
+                [
+                  "XTRA",
+                  "563"
+                ],
+                [
+                  "XTUR",
+                  "563"
+                ],
+                [
+                  "XTUD",
+                  "463"
+                ],
+                [
+                  "YTUC",
+                  "728"
+                ],
+                [
+                  "YOPE",
+                  "79"
+                ]
+              ]
+            },
+            {
+              "label": "XTUD",
+              "duration": "1",
+              "isActive": "1",
+              "autoOPSZ": "0",
+              "axesLocations": [
+                [
+                  "XOPQ",
+                  "196"
+                ],
+                [
+                  "YOPQ",
+                  "179"
+                ],
+                [
+                  "XTRA",
+                  "563"
+                ],
+                [
+                  "XTUR",
+                  "563"
+                ],
+                [
+                  "XTUD",
+                  "563"
+                ],
+                [
+                  "YTUC",
+                  "728"
+                ],
+                [
+                  "YOPE",
+                  "79"
+                ]
+              ]
+            },
+            {
+              "label": "YTUC",
+              "duration": "1",
+              "isActive": "1",
+              "autoOPSZ": "0",
+              "axesLocations": [
+                [
+                  "XOPQ",
+                  "196"
+                ],
+                [
+                  "YOPQ",
+                  "179"
+                ],
+                [
+                  "XTRA",
+                  "563"
+                ],
+                [
+                  "XTUR",
+                  "563"
+                ],
+                [
+                  "XTUD",
+                  "563"
+                ],
+                [
+                  "YTUC",
+                  "778"
+                ],
+                [
+                  "YOPE",
+                  "79"
+                ]
+              ]
+            },
+            {
+              "label": "YOPE",
+              "duration": "1",
+              "isActive": "1",
+              "autoOPSZ": "0",
+              "axesLocations": [
+                [
+                  "XOPQ",
+                  "196"
+                ],
+                [
+                  "YOPQ",
+                  "179"
+                ],
+                [
+                  "XTRA",
+                  "563"
+                ],
+                [
+                  "XTUR",
+                  "563"
+                ],
+                [
+                  "XTUD",
+                  "563"
+                ],
+                [
+                  "YTUC",
+                  "778"
+                ],
+                [
+                  "YOPE",
+                  "129"
+                ]
+              ]
+            },
+            {
+              "label": "Final",
+              "duration": "1",
+              "isActive": "1",
+              "autoOPSZ": "0",
+              "axesLocations": [
+                [
+                  "XOPQ",
+                  "196"
+                ],
+                [
+                  "YOPQ",
+                  "179"
+                ],
+                [
+                  "XTRA",
+                  "563"
+                ],
+                [
+                  "XTUR",
+                  "563"
+                ],
+                [
+                  "XTUD",
+                  "563"
+                ],
+                [
+                  "YTUC",
+                  "778"
+                ],
+                [
+                  "YOPE",
+                  "129"
+                ]
+              ]
+            }
+          ],
+          "activeActors": [
+            {
+              "instance": {
+                "isLoop": "0",
+                "label": "Variable Text",
+                "keyMoments": [
+                  {
+                    "label": "Key Moment 1",
+                    "duration": "1",
+                    "isActive": "1",
+                    "numericProperties": [
+                      [
+                        "x",
+                        "50"
+                      ],
+                      [
+                        "width",
+                        "1280"
+                      ],
+                      [
+                        "y",
+                        "250"
+                      ]
+                    ],
+                    "autoOPSZ": "0",
+                    "fontSize": "48",
+                    "textRun": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                    "textAlign": "left"
+                  }
+                ]
+              },
+              "actorTypeKey": "LineOfTextActorModel"
+            }
+          ]
+        },
+        "actorTypeKey": "LayerActorModel"
+      },
+      {
+        "instance": {
+          "isLoop": "0",
+          "label": "Axes Container",
+          "keyMoments": [
+            {
+              "label": "Key Moment 1",
+              "duration": "1",
+              "isActive": "1",
+              "numericProperties": [
+                [
+                  "width",
+                  "1280"
+                ],
+                [
+                  "height",
+                  "160"
+                ],
+                [
+                  "y",
+                  "0"
+                ]
+              ],
+              "autoOPSZ": "0",
+              "textColor": {
+                "instance": {
+                  "R": "77.00000",
+                  "G": "80.00000",
+                  "B": "85.00000"
+                },
+                "colorTypeKey": "RGB"
+              },
+              "backgroundColor": {
+                "instance": {
+                  "R": "12.90000",
+                  "G": "27.06000",
+                  "B": "40.00000",
+                  "alpha": "100.00000"
+                },
+                "colorTypeKey": "RGB"
+              },
+              "positioningVertical": "bottom"
+            }
+          ],
+          "activeActors": [
+            {
+              "instance": {
+                "isLoop": "0",
+                "label": "Axes 1",
+                "keyMoments": [
+                  {
+                    "label": "Key Moment 1",
+                    "duration": "1",
+                    "isActive": "1",
+                    "numericProperties": [
+                      [
+                        "y",
+                        "125"
+                      ],
+                      [
+                        "width",
+                        "1280"
+                      ]
+                    ],
+                    "autoOPSZ": "0",
+                    "fontSize": "14",
+                    "textRun": "size14      weight700      width50      slant0      grade0      space0      stem96      stem79      counter463",
+                    "textAlign": "center",
+                    "positioningVertical": "bottom"
+                  }
+                ]
+              },
+              "actorTypeKey": "LineOfTextActorModel"
+            },
+            {
+              "instance": {
+                "isLoop": "0",
+                "label": "Axes 2",
+                "keyMoments": [
+                  {
+                    "label": "Key Moment 1",
+                    "duration": "1",
+                    "isActive": "1",
+                    "numericProperties": [
+                      [
+                        "width",
+                        "1280"
+                      ],
+                      [
+                        "y",
+                        "25"
+                      ]
+                    ],
+                    "autoOPSZ": "0",
+                    "fontSize": "14",
+                    "textRun": "xouc      youc      xtuc      xtur      xtud      ytuc      yope",
+                    "textAlign": "center",
+                    "positioningVertical": "bottom"
+                  }
+                ]
+              },
+              "actorTypeKey": "LineOfTextActorModel"
+            },
+            {
+              "instance": {
+                "isLoop": "0",
+                "label": "Horizontal Line",
+                "keyMoments": [
+                  {
+                    "label": "Key Moment 1",
+                    "duration": "1",
+                    "isActive": "1",
+                    "numericProperties": [
+                      [
+                        "width",
+                        "1280"
+                      ],
+                      [
+                        "height",
+                        "1"
+                      ],
+                      [
+                        "y",
+                        "75"
+                      ]
+                    ],
+                    "fillColor": {
+                      "instance": {
+                        "R": "77.00000",
+                        "G": "80.00000",
+                        "B": "85.00000"
+                      },
+                      "colorTypeKey": "RGB"
+                    }
+                  }
+                ]
+              },
+              "actorTypeKey": "RectangleActorModel"
+            },
+            {
+              "instance": {
+                "isLoop": "0",
+                "label": "Marker",
+                "keyMoments": [
+                  {
+                    "label": "Start",
+                    "duration": "1",
+                    "isActive": "1",
+                    "numericProperties": [
+                      [
+                        "x",
+                        "430"
+                      ],
+                      [
+                        "r",
+                        "20"
+                      ],
+                      [
+                        "y",
+                        "55"
+                      ]
+                    ],
+                    "fillColor": {
+                      "instance": {
+                        "R": "100.00000",
+                        "G": "100.00000",
+                        "B": "100.00000"
+                      },
+                      "colorTypeKey": "RGB"
+                    }
+                  },
+                  {
+                    "label": "XOPQ",
+                    "duration": "1",
+                    "isActive": "1",
+                    "numericProperties": [
+                      [
+                        "x",
+                        "430"
+                      ],
+                      [
+                        "r",
+                        "20"
+                      ],
+                      [
+                        "y",
+                        "55"
+                      ]
+                    ],
+                    "fillColor": {
+                      "instance": {
+                        "R": "100.00000",
+                        "G": "100.00000",
+                        "B": "100.00000"
+                      },
+                      "colorTypeKey": "RGB"
+                    }
+                  },
+                  {
+                    "label": "YOPQ",
+                    "duration": "1",
+                    "isActive": "0",
+                    "numericProperties": [
+                      [
+                        "x",
+                        "495"
+                      ]
+                    ]
+                  },
+                  {
+                    "label": "XTRA",
+                    "duration": "1",
+                    "isActive": "0",
+                    "numericProperties": [
+                      [
+                        "x",
+                        "560"
+                      ]
+                    ]
+                  },
+                  {
+                    "label": "XTUR",
+                    "duration": "1",
+                    "isActive": "1",
+                    "numericProperties": [
+                      [
+                        "x",
+                        "620"
+                      ]
+                    ]
+                  },
+                  {
+                    "label": "XTUD",
+                    "duration": "1",
+                    "isActive": "0",
+                    "numericProperties": [
+                      [
+                        "x",
+                        "685"
+                      ]
+                    ]
+                  },
+                  {
+                    "label": "YTUC",
+                    "duration": "1",
+                    "isActive": "0",
+                    "numericProperties": [
+                      [
+                        "x",
+                        "745"
+                      ]
+                    ]
+                  },
+                  {
+                    "label": "YOPE",
+                    "duration": "1",
+                    "isActive": "0",
+                    "numericProperties": [
+                      [
+                        "x",
+                        "810"
+                      ]
+                    ]
+                  },
+                  {
+                    "label": "Final 1",
+                    "duration": "1",
+                    "isActive": "1"
+                  },
+                  {
+                    "label": "Final 2",
+                    "duration": "1",
+                    "isActive": "1"
+                  }
+                ]
+              },
+              "actorTypeKey": "CircleActorModel"
+            }
+          ]
+        },
+        "actorTypeKey": "LayerActorModel"
+      }
+    ],
+    "width": "1280",
+    "height": "720",
+    "editingActor": "./1/instance/activeActors/3"
+  },
+  "activeLayoutKey": "StageAndActors",
+  "activeFontKey": "from-url Roboto Delta Regular Version_3-000"
+}
