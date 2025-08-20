@@ -1,15 +1,15 @@
 {
   "activeState": {
     "t": "1",
-    "duration": "10",
+    "duration": "16",
     "isLoop": "0",
-    "perpetual": "1",
+    "perpetual": "0",
     "playing": "0",
     "keyMoments": [
       {
         "label": "Key Moment 1",
         "duration": "1",
-        "isActive": "1",
+        "isActive": "0",
         "autoOPSZ": "0",
         "textColor": {
           "instance": {
@@ -36,9 +36,9 @@
           "label": "Variable Text Animation",
           "keyMoments": [
             {
-              "label": "Default 1",
-              "duration": "1",
-              "isActive": "1",
+              "label": "Start",
+              "duration": "0",
+              "isActive": "0",
               "autoOPSZ": "0",
               "axesLocations": [
                 [
@@ -72,9 +72,9 @@
               ]
             },
             {
-              "label": "Default 2",
+              "label": "Defaults",
               "duration": "1",
-              "isActive": "1",
+              "isActive": "0",
               "autoOPSZ": "0",
               "axesLocations": [
                 [
@@ -110,7 +110,7 @@
             {
               "label": "XOPQ",
               "duration": "1",
-              "isActive": "1",
+              "isActive": "0",
               "autoOPSZ": "0",
               "axesLocations": [
                 [
@@ -146,7 +146,7 @@
             {
               "label": "YOPQ",
               "duration": "1",
-              "isActive": "1",
+              "isActive": "0",
               "autoOPSZ": "0",
               "axesLocations": [
                 [
@@ -182,7 +182,7 @@
             {
               "label": "XTRA",
               "duration": "1",
-              "isActive": "1",
+              "isActive": "0",
               "autoOPSZ": "0",
               "axesLocations": [
                 [
@@ -218,7 +218,7 @@
             {
               "label": "XTUR",
               "duration": "1",
-              "isActive": "1",
+              "isActive": "0",
               "autoOPSZ": "0",
               "axesLocations": [
                 [
@@ -254,7 +254,7 @@
             {
               "label": "XTUD",
               "duration": "1",
-              "isActive": "1",
+              "isActive": "0",
               "autoOPSZ": "0",
               "axesLocations": [
                 [
@@ -290,7 +290,7 @@
             {
               "label": "YTUC",
               "duration": "1",
-              "isActive": "1",
+              "isActive": "0",
               "autoOPSZ": "0",
               "axesLocations": [
                 [
@@ -326,7 +326,7 @@
             {
               "label": "YOPE",
               "duration": "1",
-              "isActive": "1",
+              "isActive": "0",
               "autoOPSZ": "0",
               "axesLocations": [
                 [
@@ -362,7 +362,7 @@
             {
               "label": "Final",
               "duration": "1",
-              "isActive": "1",
+              "isActive": "0",
               "autoOPSZ": "0",
               "axesLocations": [
                 [
@@ -405,7 +405,7 @@
                   {
                     "label": "Key Moment 1",
                     "duration": "1",
-                    "isActive": "1",
+                    "isActive": "0",
                     "numericProperties": [
                       [
                         "x",
@@ -441,7 +441,7 @@
             {
               "label": "Key Moment 1",
               "duration": "1",
-              "isActive": "1",
+              "isActive": "0",
               "numericProperties": [
                 [
                   "width",
@@ -486,7 +486,7 @@
                   {
                     "label": "Key Moment 1",
                     "duration": "1",
-                    "isActive": "1",
+                    "isActive": "0",
                     "numericProperties": [
                       [
                         "y",
@@ -515,7 +515,7 @@
                   {
                     "label": "Key Moment 1",
                     "duration": "1",
-                    "isActive": "1",
+                    "isActive": "0",
                     "numericProperties": [
                       [
                         "width",
@@ -544,7 +544,7 @@
                   {
                     "label": "Key Moment 1",
                     "duration": "1",
-                    "isActive": "1",
+                    "isActive": "0",
                     "numericProperties": [
                       [
                         "width",
@@ -578,9 +578,9 @@
                 "label": "Marker",
                 "keyMoments": [
                   {
-                    "label": "Start",
-                    "duration": "1",
-                    "isActive": "1",
+                    "label": "XOPQ",
+                    "duration": "0",
+                    "isActive": "0",
                     "numericProperties": [
                       [
                         "x",
@@ -606,30 +606,25 @@
                   },
                   {
                     "label": "XOPQ",
-                    "duration": "1",
-                    "isActive": "1",
+                    "duration": "2",
+                    "isActive": "0",
                     "numericProperties": [
                       [
                         "x",
                         "430"
-                      ],
-                      [
-                        "r",
-                        "20"
-                      ],
-                      [
-                        "y",
-                        "55"
                       ]
-                    ],
-                    "fillColor": {
-                      "instance": {
-                        "R": "100.00000",
-                        "G": "100.00000",
-                        "B": "100.00000"
-                      },
-                      "colorTypeKey": "RGB"
-                    }
+                    ]
+                  },
+                  {
+                    "label": "YOPQ",
+                    "duration": "0",
+                    "isActive": "0",
+                    "numericProperties": [
+                      [
+                        "x",
+                        "495"
+                      ]
+                    ]
                   },
                   {
                     "label": "YOPQ",
@@ -639,6 +634,17 @@
                       [
                         "x",
                         "495"
+                      ]
+                    ]
+                  },
+                  {
+                    "label": "XTRA",
+                    "duration": "0",
+                    "isActive": "0",
+                    "numericProperties": [
+                      [
+                        "x",
+                        "560"
                       ]
                     ]
                   },
@@ -655,12 +661,34 @@
                   },
                   {
                     "label": "XTUR",
-                    "duration": "1",
-                    "isActive": "1",
+                    "duration": "0",
+                    "isActive": "0",
                     "numericProperties": [
                       [
                         "x",
                         "620"
+                      ]
+                    ]
+                  },
+                  {
+                    "label": "XTUR",
+                    "duration": "1",
+                    "isActive": "0",
+                    "numericProperties": [
+                      [
+                        "x",
+                        "620"
+                      ]
+                    ]
+                  },
+                  {
+                    "label": "XTUD",
+                    "duration": "0",
+                    "isActive": "0",
+                    "numericProperties": [
+                      [
+                        "x",
+                        "685"
                       ]
                     ]
                   },
@@ -677,6 +705,17 @@
                   },
                   {
                     "label": "YTUC",
+                    "duration": "0",
+                    "isActive": "0",
+                    "numericProperties": [
+                      [
+                        "x",
+                        "745"
+                      ]
+                    ]
+                  },
+                  {
+                    "label": "YTUC",
                     "duration": "1",
                     "isActive": "0",
                     "numericProperties": [
@@ -688,7 +727,7 @@
                   },
                   {
                     "label": "YOPE",
-                    "duration": "1",
+                    "duration": "0",
                     "isActive": "0",
                     "numericProperties": [
                       [
@@ -698,14 +737,15 @@
                     ]
                   },
                   {
-                    "label": "Final 1",
-                    "duration": "1",
-                    "isActive": "1"
-                  },
-                  {
-                    "label": "Final 2",
-                    "duration": "1",
-                    "isActive": "1"
+                    "label": "YOPE",
+                    "duration": "2",
+                    "isActive": "0",
+                    "numericProperties": [
+                      [
+                        "x",
+                        "810"
+                      ]
+                    ]
                   }
                 ]
               },
