@@ -1,7 +1,7 @@
 {
   "activeState": {
     "t": "0",
-    "duration": "16",
+    "duration": "10",
     "isLoop": "0",
     "perpetual": "0",
     "playing": "0",
@@ -119,7 +119,7 @@
               "axesLocations": [
                 [
                   "XOUC",
-                  "196"
+                  "149"
                 ],
                 [
                   "YOUC",
@@ -155,11 +155,11 @@
               "axesLocations": [
                 [
                   "XOUC",
-                  "196"
+                  "149"
                 ],
                 [
                   "YOUC",
-                  "179"
+                  "116"
                 ],
                 [
                   "XTUC",
@@ -191,15 +191,15 @@
               "axesLocations": [
                 [
                   "XOUC",
-                  "196"
+                  "149"
                 ],
                 [
                   "YOUC",
-                  "179"
+                  "116"
                 ],
                 [
                   "XTUC",
-                  "433"
+                  "389"
                 ],
                 [
                   "XTUR",
@@ -227,19 +227,55 @@
               "axesLocations": [
                 [
                   "XOUC",
-                  "196"
+                  "149"
                 ],
                 [
                   "YOUC",
-                  "179"
+                  "116"
                 ],
                 [
                   "XTUC",
-                  "433"
+                  "389"
                 ],
                 [
                   "XTUR",
                   "563"
+                ],
+                [
+                  "XTUD",
+                  "463"
+                ],
+                [
+                  "YTUC",
+                  "728"
+                ],
+                [
+                  "YOPE",
+                  "79"
+                ]
+              ]
+            },
+            {
+              "label": "XTUR",
+              "duration": "1",
+              "isActive": "0",
+              "autoOPSZ": "0",
+              "axesLocations": [
+                [
+                  "XOUC",
+                  "149"
+                ],
+                [
+                  "YOUC",
+                  "116"
+                ],
+                [
+                  "XTUC",
+                  "389"
+                ],
+                [
+                  "XTUR",
+                  "463"
                 ],
                 [
                   "XTUD",
@@ -263,23 +299,59 @@
               "axesLocations": [
                 [
                   "XOUC",
-                  "196"
+                  "149"
                 ],
                 [
                   "YOUC",
-                  "179"
+                  "116"
                 ],
                 [
                   "XTUC",
-                  "433"
+                  "389"
                 ],
                 [
                   "XTUR",
-                  "563"
+                  "463"
                 ],
                 [
                   "XTUD",
                   "563"
+                ],
+                [
+                  "YTUC",
+                  "728"
+                ],
+                [
+                  "YOPE",
+                  "79"
+                ]
+              ]
+            },
+            {
+              "label": "XTUD",
+              "duration": "1",
+              "isActive": "0",
+              "autoOPSZ": "0",
+              "axesLocations": [
+                [
+                  "XOUC",
+                  "149"
+                ],
+                [
+                  "YOUC",
+                  "116"
+                ],
+                [
+                  "XTUC",
+                  "389"
+                ],
+                [
+                  "XTUR",
+                  "463"
+                ],
+                [
+                  "XTUD",
+                  "463"
                 ],
                 [
                   "YTUC",
@@ -299,27 +371,63 @@
               "axesLocations": [
                 [
                   "XOUC",
-                  "196"
+                  "149"
                 ],
                 [
                   "YOUC",
-                  "179"
+                  "116"
                 ],
                 [
                   "XTUC",
-                  "433"
+                  "389"
                 ],
                 [
                   "XTUR",
-                  "563"
+                  "463"
                 ],
                 [
                   "XTUD",
-                  "563"
+                  "463"
                 ],
                 [
                   "YTUC",
                   "778"
+                ],
+                [
+                  "YOPE",
+                  "79"
+                ]
+              ]
+            },
+            {
+              "label": "YTUC",
+              "duration": "1",
+              "isActive": "0",
+              "autoOPSZ": "0",
+              "axesLocations": [
+                [
+                  "XOUC",
+                  "149"
+                ],
+                [
+                  "YOUC",
+                  "116"
+                ],
+                [
+                  "XTUC",
+                  "389"
+                ],
+                [
+                  "XTUR",
+                  "463"
+                ],
+                [
+                  "XTUD",
+                  "463"
+                ],
+                [
+                  "YTUC",
+                  "728"
                 ],
                 [
                   "YOPE",
@@ -335,31 +443,67 @@
               "axesLocations": [
                 [
                   "XOUC",
-                  "196"
+                  "149"
                 ],
                 [
                   "YOUC",
-                  "179"
+                  "116"
                 ],
                 [
                   "XTUC",
-                  "433"
+                  "389"
                 ],
                 [
                   "XTUR",
-                  "563"
+                  "463"
                 ],
                 [
                   "XTUD",
-                  "563"
+                  "463"
                 ],
                 [
                   "YTUC",
-                  "778"
+                  "728"
                 ],
                 [
                   "YOPE",
                   "129"
+                ]
+              ]
+            },
+            {
+              "label": "YOPE",
+              "duration": "1",
+              "isActive": "0",
+              "autoOPSZ": "0",
+              "axesLocations": [
+                [
+                  "XOUC",
+                  "149"
+                ],
+                [
+                  "YOUC",
+                  "116"
+                ],
+                [
+                  "XTUC",
+                  "389"
+                ],
+                [
+                  "XTUR",
+                  "463"
+                ],
+                [
+                  "XTUD",
+                  "463"
+                ],
+                [
+                  "YTUC",
+                  "728"
+                ],
+                [
+                  "YOPE",
+                  "79"
                 ]
               ]
             },
@@ -371,31 +515,31 @@
               "axesLocations": [
                 [
                   "XOUC",
-                  "196"
+                  "149"
                 ],
                 [
                   "YOUC",
-                  "179"
+                  "116"
                 ],
                 [
                   "XTUC",
-                  "433"
+                  "389"
                 ],
                 [
                   "XTUR",
-                  "563"
+                  "463"
                 ],
                 [
                   "XTUD",
-                  "563"
+                  "463"
                 ],
                 [
                   "YTUC",
-                  "778"
+                  "728"
                 ],
                 [
                   "YOPE",
-                  "129"
+                  "79"
                 ]
               ]
             }
@@ -425,6 +569,12 @@
                       ]
                     ],
                     "autoOPSZ": "0",
+                    "axesLocations": [
+                      [
+                        "opsz",
+                        "14"
+                      ]
+                    ],
                     "fontSize": "48",
                     "textRun": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
                     "textAlign": "center"
@@ -503,7 +653,7 @@
                     ],
                     "autoOPSZ": "0",
                     "fontSize": "14",
-                    "textRun": "size14      weight700      width50      slant0      grade0      space0      stem96      stem79      counter463",
+                    "textRun": "size14      weight400      width100      slant0      grade0      space0      stem96      stem79      counter463",
                     "textAlign": "center",
                     "positioningVertical": "bottom"
                   }
@@ -676,7 +826,7 @@
                   },
                   {
                     "label": "XTUR",
-                    "duration": "1",
+                    "duration": "2",
                     "isActive": "0",
                     "numericProperties": [
                       [
@@ -698,7 +848,7 @@
                   },
                   {
                     "label": "XTUD",
-                    "duration": "1",
+                    "duration": "2",
                     "isActive": "0",
                     "numericProperties": [
                       [
@@ -720,7 +870,7 @@
                   },
                   {
                     "label": "YTUC",
-                    "duration": "1",
+                    "duration": "2",
                     "isActive": "0",
                     "numericProperties": [
                       [
@@ -742,7 +892,7 @@
                   },
                   {
                     "label": "YOPE",
-                    "duration": "2",
+                    "duration": "3",
                     "isActive": "0",
                     "numericProperties": [
                       [
