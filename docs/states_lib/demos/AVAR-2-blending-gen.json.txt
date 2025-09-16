@@ -1,0 +1,1250 @@
+{
+  "activeState": {
+    "t": "0",
+    "duration": "10",
+    "isLoop": "0",
+    "perpetual": "0",
+    "playing": "0",
+    "keyMoments": [
+      {
+        "label": "Init",
+        "duration": "0",
+        "isActive": "0",
+        "autoOPSZ": "0",
+        "textColor": {
+          "instance": {
+            "R": "100.00000",
+            "G": "100.00000",
+            "B": "100.00000"
+          },
+          "colorTypeKey": "RGB"
+        },
+        "stageBackgroundColor": {
+          "instance": {
+            "R": "0.00000",
+            "G": "34.00000",
+            "B": "64.00000"
+          },
+          "colorTypeKey": "RGB"
+        }
+      }
+    ],
+    "activeActors": [
+      {
+        "instance": {
+          "isLoop": "0",
+          "label": "Variable Text Animation",
+          "keyMoments": [
+
+
+        
+            {
+              "label": "Init",
+              "duration": "0",
+              "isActive": "0",
+              "autoOPSZ": "0",
+              "axesLocations": [["wght", "400"], ["wdth", "100"], ["XOUC","96"],["YOUC","79"],["XTUC","463"],["opsz","14"], ["YOPQ", "79"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "Wait",
+              "duration": "0.5",
+              "isActive": "0",
+              "autoOPSZ": "0",
+              "axesLocations": [["XOUC","96"],["YOUC","79"],["XTUC","463"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "XOUC",
+              "duration": "1.5",
+              "isActive": "0",
+              "autoOPSZ": "0",
+              "axesLocations": [["XOUC","66"],["YOUC","79"],["XTUC","463"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "YOUC",
+              "duration": "1.5",
+              "isActive": "0",
+              "autoOPSZ": "0",
+              "axesLocations": [["XOUC","66"],["YOUC","60"],["XTUC","463"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "XTUC",
+              "duration": "1.5",
+              "isActive": "0",
+              "autoOPSZ": "0",
+              "axesLocations": [["XOUC","66"],["YOUC","60"],["XTUC","446"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "Wait",
+              "duration": "0.5",
+              "isActive": "0",
+              "autoOPSZ": "0",
+              "axesLocations": [["wght", "400"], ["wdth", "100"], ["XOUC","66"],["YOUC","60"],["XTUC","446"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "User",
+              "duration": "0",
+              "isActive": "0",
+              "autoOPSZ": "0",
+              "axesLocations": [["wght", "250"], ["wdth",  "33"], ["XOUC","96"],["YOUC","79"],["XTUC","463"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "User Pause",
+              "duration": "1",
+              "isActive": "0",
+              "autoOPSZ": "0",
+              "axesLocations": [["YOPQ", "79"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "Finesse,",
+              "duration": "1.5",
+              "isActive": "0",
+              "autoOPSZ": "0",
+              "axesLocations": [["YOPQ", "53"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "Final",
+              "duration": "0",
+              "isActive": "0",
+              "autoOPSZ": "0",
+              "axesLocations": []
+            }
+          
+        
+
+
+          ],
+          "activeActors": [
+            {
+              "instance": {
+                "isLoop": "0",
+                "label": "Variable Text",
+                "keyMoments": [
+                  {
+                    "label": "Init",
+                    "duration": "0",
+                    "isActive": "0",
+                    "numericProperties": [
+                      [
+                        "x",
+                        "-500"
+                      ],
+                      [
+                        "width",
+                        "2280"
+                      ],
+                      [
+                        "y",
+                        "250"
+                      ]
+                    ],
+                    "autoOPSZ": "0",
+                    "axesLocations": [
+                      [
+                        "opsz",
+                        "14"
+                      ]
+                    ],
+                    "fontSize": "48",
+                    "textRun": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                    "textAlign": "center"
+                  }
+                ]
+              },
+              "actorTypeKey": "LineOfTextActorModel"
+            }
+          ]
+        },
+        "actorTypeKey": "LayerActorModel"
+      },
+
+
+
+      {
+        "instance": {
+          "isLoop": "0",
+          "label": "Axes Container",
+          "keyMoments": [
+            {
+              "label": "Init",
+              "duration": "0",
+              "isActive": "0",
+              "numericProperties": [
+                [
+                  "width",
+                  "1280"
+                ],
+                [
+                  "height",
+                  "230"
+                ],
+                [
+                  "y",
+                  "0"
+                ],
+                [
+                  "line-height-em",
+                  "1.5"
+                ]
+              ],
+              "autoOPSZ": "1",
+              "fontSize": "30",
+              "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"},
+              "positioningVertical": "bottom"
+            }
+          ],
+          "activeActors": [
+            {
+              "instance": {
+                "isLoop": "0",
+                "label": "BG Axes",
+                "keyMoments": [
+                  {
+                    "label": "Init",
+                    "duration": "0",
+                    "isActive": "0",
+                    "numericProperties": [
+                      [
+                        "y",
+                        "0"
+                      ],
+                      [
+                        "x",
+                        "315"
+                      ],
+                      [
+                        "width",
+                        "965"
+                      ],
+                      [
+                        "height",
+                        "230"
+                      ],
+                      [
+                        "z-index",
+                        "-1"
+                      ]
+                    ],
+                    "fillColor": {
+                      "instance": {
+                        "R": "12.90000",
+                        "G": "27.06000",
+                        "B": "40.00000"
+                      },
+                      "colorTypeKey": "RGB"
+                    }
+                  }
+                ]
+              },
+              "actorTypeKey": "RectangleActorModel"
+            },
+            {
+              "instance": {
+                "isLoop": "0",
+                "label": "Horizontal Line",
+                "keyMoments": [
+                  {
+                    "label": "Setup",
+                    "duration": "0",
+                    "isActive": "0",
+                    "numericProperties": [
+                      [
+                        "width",
+                        "1280"
+                      ],
+                      [
+                        "height",
+                        "3"
+                      ],
+                      [
+                        "z-index",
+                        "-1"
+                      ]
+                    ],
+                    "fillColor": {
+                      "instance": {
+                        "L": "55.00000",
+                        "C": "4.90749",
+                        "H": "0.7242320"
+                      },
+                      "colorTypeKey": "OKLCH"
+                    }
+                  },
+
+
+
+
+        
+            {
+              "label": "Init",
+              "duration": "0",
+              "isActive": "0",
+              "numericProperties": [["y", "-1000"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "Wait",
+              "duration": "0.5",
+              "isActive": "0",
+              "numericProperties": [["y", "-1000"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "line3",
+              "duration": "0",
+              "isActive": "0",
+              "numericProperties": [["y", "49"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "line3 wait",
+              "duration": "4.5",
+              "isActive": "0",
+              "numericProperties": [["y", "49"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "line1 transition",
+              "duration": "0.5",
+              "isActive": "0",
+              "numericProperties": [["y", "179"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "line1 wait",
+              "duration": "0",
+              "isActive": "0",
+              "numericProperties": [["y", "179"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "line2 transition",
+              "duration": "1",
+              "isActive": "0",
+              "numericProperties": [["y", "114"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "line2 wait",
+              "duration": "1.5",
+              "isActive": "0",
+              "numericProperties": [["y", "114"]]
+            }
+          
+        
+
+                ]
+              },
+              "actorTypeKey": "RectangleActorModel"
+            },
+
+
+            {
+              "instance": {
+                "isLoop": "0",
+                "label": "1-Line User Axes",
+                "keyMoments": [
+                  {
+                    "label": "Inactive Init",
+                    "duration": "0",
+                    "isActive": "0",
+                    "numericProperties": [
+                      [
+                        "y",
+                        "150"
+                      ]
+                    ],
+                    "autoOPSZ": "0",
+                    "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                  },
+                  {
+                    "label": "Inactive Wait",
+                    "duration": "5.5",
+                    "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                  },
+                  {
+                    "label": "Active",
+                    "duration": 0,
+                    "textColor": {"instance": {"L": "100.00000", "C": "0.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                  },
+                  {
+                    "label": "Active Wait",
+                    "duration": "1",
+                    "textColor": {"instance": {"L": "100.00000", "C": "0.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                  },
+                  {
+                    "label": "Inactive",
+                    "duration": 0,
+                    "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                  },
+                  {
+                    "label": "Inactive Wait",
+                    "duration": "1.5",
+                    "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                  }
+                ],
+                "activeActors": [
+                  {
+                    "instance": {
+                      "isLoop": "0",
+                      "label": "User Axes Label",
+                      "keyMoments": [
+                        {
+                          "label": "Inactive Init",
+                          "duration": "0",
+                          "isActive": "0",
+                          "numericProperties": [
+                            [
+                              "width",
+                              "310"
+                            ]
+                          ],
+                          "autoOPSZ": "0",
+                          "axesLocations": [
+                            [
+                              "wght",
+                              "700"
+                            ]
+                          ],
+                          "textRun": "  User Axes",
+                          "backgroundColor": {"instance": {"L": "100.00000","C": "0.00000","H": "0.0000000","alpha": "20.00000"},"colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Inactive Wait",
+                          "duration": "5.5",
+                          "backgroundColor": {"instance": {"L": "100.00000","C": "0.00000","H": "0.0000000","alpha": "20.00000"},"colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Active",
+                          "duration": "0",
+                          "backgroundColor": {"instance": {"L": "100.00000","C": "0.00000","H": "0.0000000","alpha": "50.00000"},"colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Active Wait",
+                          "duration": "1",
+                          "backgroundColor": {"instance": {"L": "100.00000","C": "0.00000","H": "0.0000000","alpha": "50.00000"},"colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Inactive Wait",
+                          "duration": "0",
+                          "backgroundColor": {"instance": {"L": "100.00000","C": "0.00000","H": "0.0000000","alpha": "20.00000"},"colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Inactive wait",
+                          "duration": "1.5",
+                          "backgroundColor": {"instance": {"L": "100.00000","C": "0.00000","H": "0.0000000","alpha": "20.00000"},"colorTypeKey": "OKLCH"}
+                        }
+                      ]
+                    },
+                    "actorTypeKey": "LineOfTextActorModel"
+                  },
+                  {
+                    "instance": {
+                      "isLoop": "0",
+                      "label": "User Axes",
+                      "keyMoments": [
+                        {
+                          "label": "Setup",
+                          "duration": "0",
+                          "isActive": "0",
+                          "numericProperties": [
+                            [
+                              "x",
+                              "310"
+                            ]
+                          ],
+                          "autoOPSZ": "0",
+                          "textRun": "    Size 14    Weight 400    Width 100    Slant 0",
+                          "textAlign": "left",
+                          "positioningVertical": "bottom",
+                          "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Inactive Wait",
+                          "duration": "5.5",
+                          "isActive": "0",
+                          "autoOPSZ": "0",
+                          "textRun": "    Size 14    Weight 400    Width 100    Slant 0",
+                          "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Result Active",
+                          "duration": "0",
+                          "isActive": "0",
+                          "autoOPSZ": "0",
+                          "textRun": "    Size 14    Weight 250    Width 33   Slant 0",
+                          "textColor": {"instance": {"L": "100.00000", "C": "100.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Highlight",
+                          "duration": "1",
+                          "textColor": {"instance": {"L": "100.00000", "C": "0.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Inactive",
+                          "duration": 0,
+                          "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Inactive Wait",
+                          "duration": 1.5,
+                          "textRun": "    Size 14    Weight 250    Width 33   Slant 0",
+                          "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                        }
+                      ]
+                    },
+                    "actorTypeKey": "LineOfTextActorModel"
+                  }
+                ]
+              },
+              "actorTypeKey": "LayerActorModel"
+            },
+            {
+              "instance": {
+                "isLoop": "0",
+                "label": "2-Line Finessables",
+                "keyMoments": [
+                  {
+                    "label": "Inactive Init",
+                    "duration": "0",
+                    "isActive": "0",
+                    "numericProperties": [
+                      [
+                        "y",
+                        "85"
+                      ]
+                    ],
+                    "autoOPSZ": "0",
+                    "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                  },
+                  {
+                    "label": "Inactive Wait",
+                    "duration": "6.5",
+                    "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                  },
+                  {
+                    "label": "Active",
+                    "duration": 0,
+                    "textColor": {"instance": {"L": "100.00000", "C": "0.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                  },
+                  {
+                    "label": "Active Wait",
+                    "duration": "1.5",
+                    "textColor": {"instance": {"L": "100.00000", "C": "0.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                  }
+                ],
+                "activeActors": [
+                  {
+                    "instance": {
+                      "isLoop": "0",
+                      "label": "Finessables Label",
+                      "keyMoments": [
+                        {
+                          "label": "Inactive Init",
+                          "duration": "0",
+                          "isActive": "0",
+                          "numericProperties": [
+                            [
+                              "width",
+                              "310"
+                            ]
+                          ],
+                          "autoOPSZ": "0",
+                          "axesLocations": [
+                            [
+                              "wght",
+                              "700"
+                            ]
+                          ],
+                          "textRun": "  Finessables",
+                          "backgroundColor": {"instance": {"L": "100.00000","C": "0.00000","H": "0.0000000","alpha": "20.00000"},"colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Inactive Wait",
+                          "duration": "6.5",
+                          "backgroundColor": {"instance": {"L": "100.00000","C": "0.00000","H": "0.0000000","alpha": "20.00000"},"colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Active",
+                          "duration": "0",
+                          "backgroundColor": {"instance": {"L": "100.00000","C": "0.00000","H": "0.0000000","alpha": "50.00000"},"colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Active Wait",
+                          "duration": "1.5",
+                          "backgroundColor": {"instance": {"L": "100.00000","C": "0.00000","H": "0.0000000","alpha": "50.00000"},"colorTypeKey": "OKLCH"}
+                        }
+                      ]
+                    },
+                    "actorTypeKey": "LineOfTextActorModel"
+                  },
+                  {
+                    "instance": {
+                      "isLoop": "0",
+                      "label": "Tag Grade",
+                      "keyMoments": [
+                        {
+                          "label": "Init",
+                          "duration": "0",
+                          "isActive": "0",
+                          "numericProperties": [
+                            [
+                              "x",
+                              "344"
+                            ]
+                          ],
+                          "autoOPSZ": "0",
+                          "textRun": "Grade"
+                        }
+                      ]
+                    },
+                    "actorTypeKey": "LineOfTextActorModel"
+                  },
+                  {
+                    "instance": {
+                      "isLoop": "0",
+                      "label": "Tag Space",
+                      "keyMoments": [
+                        {
+                          "label": "Init",
+                          "duration": "0",
+                          "isActive": "0",
+                          "numericProperties": [
+                            [
+                              "x",
+                              "477"
+                            ]
+                          ],
+                          "autoOPSZ": "0",
+                          "textRun": "Space"
+                        }
+                      ]
+                    },
+                    "actorTypeKey": "LineOfTextActorModel"
+                  },
+                  {
+                    "instance": {
+                      "isLoop": "0",
+                      "label": "Tag xStem",
+                      "keyMoments": [
+                        {
+                          "label": "Init",
+                          "duration": "0",
+                          "isActive": "0",
+                          "numericProperties": [
+                            [
+                              "x",
+                              "614"
+                            ]
+                          ],
+                          "autoOPSZ": "0",
+                          "textRun": "xStem"
+                        }
+                      ]
+                    },
+                    "actorTypeKey": "LineOfTextActorModel"
+                  },
+                  {
+                    "instance": {
+                      "isLoop": "0",
+                      "label": "Tag yStem",
+                      "keyMoments": [
+                        {
+                          "label": "Inactive Init",
+                          "duration": "0",
+                          "isActive": "0",
+                          "numericProperties": [
+                            [
+                              "x",
+                              "751"
+                            ]
+                          ],
+                          "autoOPSZ": "0",
+                          "textRun": "yStem",
+                          "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Inactive wait",
+                          "duration": "6.5",
+                          "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Active",
+                          "duration": "0",
+                          "textColor": {"instance": {"L": "100.00000", "C": "0.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "highlight",
+                          "duration": "1.5",
+                          "textColor": {"instance": {"L": "100.00000", "C": "100.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                        }
+                      ]
+                    },
+                    "actorTypeKey": "LineOfTextActorModel"
+                  },
+                  {
+                    "instance": {
+                      "isLoop": "0",
+                      "label": "Tag Counter",
+                      "keyMoments": [
+                        {
+                          "label": "Init",
+                          "duration": "0",
+                          "isActive": "0",
+                          "numericProperties": [
+                            [
+                              "x",
+                              "888"
+                            ]
+                          ],
+                          "autoOPSZ": "0",
+                          "textRun": "Counter"
+                        }
+                      ]
+                    },
+                    "actorTypeKey": "LineOfTextActorModel"
+                  }
+                ]
+              },
+              "actorTypeKey": "LayerActorModel"
+            },
+            {
+              "instance": {
+                "isLoop": "0",
+                "label": "3-Line Constructables",
+                "keyMoments": [
+                  {
+                    "label": "Init",
+                    "duration": "0",
+                    "isActive": "0",
+                    "numericProperties": [
+                      [
+                        "y",
+                        "20"
+                      ]
+                    ],
+                    "autoOPSZ": "0",
+                    "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                  },
+                  {
+                    "label": "Init Wait",
+                    "duration": "0.5",
+                    "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                  },
+                  {
+                    "label": "Active",
+                    "duration": "0",
+                    "textColor": {"instance": {"L": "100.00000", "C": "0.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                  },
+                                    {
+                    "label": "Active Wait",
+                    "duration": "5",
+                    "textColor": {"instance": {"L": "100.00000", "C": "0.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                  },
+                  {
+                    "label": "Inactive",
+                    "duration": "0",
+                    "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                  },
+                  {
+                    "label": "Inactive Wait",
+                    "duration": "2.5",
+                    "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                  }
+                ],
+                "activeActors": [
+                  {
+                    "instance": {
+                      "isLoop": "0",
+                      "label": "Construct Label",
+                      "keyMoments": [
+                        {
+                          "label": "Init",
+                          "duration": "0",
+                          "isActive": "0",
+                          "numericProperties": [
+                            [
+                              "width",
+                              "310"
+                            ]
+                          ],
+                          "autoOPSZ": "0",
+                          "axesLocations": [
+                            [
+                              "wght",
+                              "700"
+                            ]
+                          ],
+                          "textRun": "  Constructables",
+                          "backgroundColor": {"instance": {"L": "100.00000","C": "0.00000","H": "0.0000000","alpha": "20.00000"},"colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Inactive Wait",
+                          "duration": "0.5",
+                          "backgroundColor": {"instance": {"L": "100.00000","C": "0.00000","H": "0.0000000","alpha": "20.00000"},"colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Active",
+                          "duration": "0",
+                          "backgroundColor": {"instance": {"L": "100.00000","C": "0.00000","H": "0.0000000","alpha": "50.00000"},"colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Active Wait",
+                          "duration": "5",
+                          "backgroundColor": {"instance": {"L": "100.00000","C": "0.00000","H": "0.0000000","alpha": "50.00000"},"colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Inactive",
+                          "duration": "0",
+                          "backgroundColor": {"instance": {"L": "100.00000","C": "0.00000","H": "0.0000000","alpha": "20.00000"},"colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Inactive Wait",
+                          "duration": "2.5",
+                          "backgroundColor": {"instance": {"L": "100.00000","C": "0.00000","H": "0.0000000","alpha": "20.00000"},"colorTypeKey": "OKLCH"}
+                        }
+                      ]
+                    },
+                    "actorTypeKey": "LineOfTextActorModel"
+                  },
+                  {
+                    "instance": {
+                      "isLoop": "0",
+                      "label": "Tag XOUC",
+                      "keyMoments": [
+                        {
+                          "label": "Inactive Init",
+                          "duration": "0",
+                          "isActive": "0",
+                          "numericProperties": [
+                            [
+                              "x",
+                              "345"
+                            ]
+                          ],
+                          "autoOPSZ": "0",
+                          "textRun": "XOUC",
+                          "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Inactive wait",
+                          "duration": "0.5",
+                          "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Active",
+                          "duration": "0",
+                          "textColor": {"instance": {"L": "100.00000", "C": "0.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "highlight",
+                          "duration": "1.5",
+                          "textColor": {"instance": {"L": "100.00000", "C": "100.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Inactive",
+                          "duration": "0",
+                          "textColor": {"instance": {"L": "100.00000", "C": "0.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Inactive Wait",
+                          "duration": "3.5",
+                          "textColor": {"instance": {"L": "100.00000", "C": "0.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Inactive",
+                          "duration": "0",
+                          "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Inactive Wait",
+                          "duration": "2.5",
+                          "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                        }
+                      ]
+                    },
+                    "actorTypeKey": "LineOfTextActorModel"
+                  },
+                  {
+                    "instance": {
+                      "isLoop": "0",
+                      "label": "Tag YOUC",
+                      "keyMoments": [
+                        {
+                          "label": "Inactive Init",
+                          "duration": "0",
+                          "isActive": "0",
+                          "numericProperties": [
+                            [
+                              "x",
+                              "477"
+                            ]
+                          ],
+                          "autoOPSZ": "0",
+                          "textRun": "YOUC",
+                          "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Inactive wait",
+                          "duration": "0.5",
+                          "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Active",
+                          "duration": "0",
+                          "textColor": {"instance": {"L": "100.00000", "C": "0.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Active Wait",
+                          "duration": "1.5",
+                          "textColor": {"instance": {"L": "100.00000", "C": "0.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Highlight",
+                          "duration": "1.5",
+                          "textColor": {"instance": {"L": "100.00000", "C": "100.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Active",
+                          "duration": "0",
+                          "textColor": {"instance": {"L": "100.00000", "C": "0.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Active Wait",
+                          "duration": "2",
+                          "textColor": {"instance": {"L": "100.00000", "C": "0.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Inactive",
+                          "duration": "0",
+                          "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Inactive Wait",
+                          "duration": "2.5",
+                          "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                        }
+                      ]
+                    },
+                    "actorTypeKey": "LineOfTextActorModel"
+                  },
+                  {
+                    "instance": {
+                      "isLoop": "0",
+                      "label": "Tag XTUC",
+                      "keyMoments": [
+                        {
+                          "label": "Key Moment 1",
+                          "duration": "0",
+                          "isActive": "0",
+                          "numericProperties": [
+                            [
+                              "x",
+                              "608"
+                            ]
+                          ],
+                          "autoOPSZ": "0",
+                          "textRun": "XTUC",
+                          "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Inactive wait",
+                          "duration": "0.5",
+                          "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Active",
+                          "duration": "0",
+                          "textColor": {"instance": {"L": "100.00000", "C": "0.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Active Wait",
+                          "duration": "3",
+                          "textColor": {"instance": {"L": "100.00000", "C": "0.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Highlight",
+                          "duration": "1.5",
+                          "textColor": {"instance": {"L": "100.00000", "C": "100.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Active",
+                          "duration": "0",
+                          "textColor": {"instance": {"L": "100.00000", "C": "0.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Active Wait",
+                          "duration": "0.5",
+                          "textColor": {"instance": {"L": "100.00000", "C": "0.00000", "H": "0.12000"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Inactive",
+                          "duration": "0",
+                          "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                        },
+                        {
+                          "label": "Inactive Wait",
+                          "duration": "2.5",
+                          "textColor": {"instance": {"L": "84.31682", "C": "4.90749", "H": "0.7242320"}, "colorTypeKey": "OKLCH"}
+                        }
+                      ]
+                    },
+                    "actorTypeKey": "LineOfTextActorModel"
+                  }
+                ]
+              },
+              "actorTypeKey": "LayerActorModel"
+            },
+            {
+              "instance": {
+                "isLoop": "0",
+                "label": "Marker",
+                "keyMoments": [
+                  {
+                    "label": "Setup",
+                    "duration": "0",
+                    "isActive": "0",
+                    "fillColor": {
+                      "instance": {
+                        "R": "100.00000",
+                        "G": "100.00000",
+                        "B": "100.00000"
+                      },
+                      "colorTypeKey": "RGB"
+                    }
+                  },
+
+
+
+
+
+        
+            {
+              "label": "Init",
+              "duration": "0",
+              "isActive": "0",
+              "numericProperties": [["x", "-1000"], ["y", "35"], ["r", "15"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "Wait",
+              "duration": "0.5",
+              "isActive": "0",
+              "numericProperties": [["x", "-1000"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "XOUC",
+              "duration": "0",
+              "isActive": "0",
+              "numericProperties": [["x", "315"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "XOUC",
+              "duration": "1.5",
+              "isActive": "0",
+              "numericProperties": [["x", "315"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "YOUC",
+              "duration": "0",
+              "isActive": "0",
+              "numericProperties": [["x", "447"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "YOUC",
+              "duration": "1.5",
+              "isActive": "0",
+              "numericProperties": [["x", "447"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "XTUC",
+              "duration": "0",
+              "isActive": "0",
+              "numericProperties": [["x", "578"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "XTUC",
+              "duration": "1.5",
+              "isActive": "0",
+              "numericProperties": [["x", "578"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "wait",
+              "duration": "0.5",
+              "isActive": "0",
+              "numericProperties": [["x", "578"], ["y", "35"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "user",
+              "duration": "0",
+              "isActive": "0",
+              "numericProperties": [["x",   "315"], ["y", "165"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "user",
+              "duration": "1",
+              "isActive": "0",
+              "numericProperties": [["x",   "315"], ["y", "165"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "finesse",
+              "duration": "0",
+              "isActive": "0",
+              "numericProperties": [["x",   "719"], ["y", "100"]]
+            }
+          ,
+          
+        
+
+        
+            {
+              "label": "finesse",
+              "duration": "1.5",
+              "isActive": "0",
+              "numericProperties": [["x",   "719"], ["y", "100"]]
+            }
+          
+        
+
+
+                ]
+              },
+              "actorTypeKey": "CircleActorModel"
+            }
+          ]
+        },
+        "actorTypeKey": "LayerActorModel"
+      }
+    ],
+    "width": "1280",
+    "height": "720"
+  },
+  "activeLayoutKey": "StageAndActors",
+  "activeFontKey": "from-url Roboto Delta Regular Version_3-000"
+}
