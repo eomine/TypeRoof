@@ -268,7 +268,10 @@ li.ui_key_moment_controller.active:not(:last-child) {
   background: var(--list-item-even-bg);
 }
 
-/* FIXME: make alternating perhaps? */
+/*
+FIXME: make alternating perhaps?
+FIXME: remove "> *" selectors to avoid using "!important" elsewhere (elements.css, L140)
+*/
 .ui_base_map,
 .ui_base_map > *,
 .ui_axes_math-locations_sum,
