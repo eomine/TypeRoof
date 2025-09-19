@@ -6,8 +6,18 @@
 @import url("./layout.css");
 @import url("./docs.css");
 
+label.ui_font-select,
 .ui_layout_select {
   display: block;
+  margin: 1em;
+}
+
+label.ui_font-select {
+  margin: 1em 1em 0.25em;
+}
+
+button.ui_font-select {
+  margin: 0 1em 1em;
 }
 
 /**
@@ -1309,12 +1319,12 @@ FIXME: remove "> *" selectors to avoid using "!important" elsewhere (elements.cs
 
 .ui_collapsible_mixin-closed {
   border-color: transparent;
-  padding-block: 0;
+  /* padding-block: 0; */
 }
 
 .ui_collapsible_mixin-open {
   border-color: #b7b4b0;
-  padding-block: 0.35em 0.625em;
+  /* padding-block: 0.35em 0.625em; */
 }
 
 .ui_collapsible_mixin-closed > :not(legend) {
@@ -1329,6 +1339,7 @@ FIXME: remove "> *" selectors to avoid using "!important" elsewhere (elements.cs
 
 .ui_collapsible_mixin-open > :is(legend) {
   list-style-type: disclosure-open;
+  margin-bottom: 1em;
 }
 
 .ui-dialog_openers-items {
