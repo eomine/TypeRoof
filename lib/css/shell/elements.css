@@ -111,6 +111,22 @@ dialog label {
 fieldset
 *******************************************************************************/
 
+fieldset {
+  border: none;
+  border-bottom: 1px solid var(--fieldset-border-color);
+  margin: 0;
+  padding: 1em;
+  min-inline-size: 0;
+}
+
+fieldset > legend {
+  box-sizing: border-box;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.5em 0;
+  width: 100%;
+}
+
 form fieldset {
   background-color: var(--background-color);
   border: var(--gap-size) solid var(--fieldset-border-color);
@@ -121,19 +137,9 @@ form fieldset + fieldset {
   margin-top: 1em;
 }
 
-fieldset {
-  border: none;
-  border-bottom: 1px solid var(--fieldset-border-color);
-  margin: 0;
-  padding: 1em;
-}
-
-fieldset > legend {
-  box-sizing: border-box;
-  cursor: pointer;
-  font-weight: 600;
-  padding: 0.5em 0;
-  width: 100%;
+form fieldset > legend {
+  padding: 0 0.5em;
+  width: auto;
 }
 
 /******************************************************************************
