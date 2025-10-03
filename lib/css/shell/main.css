@@ -200,10 +200,7 @@ li.ui_key_moment_controller.active:not(:last-child) {
 
 .stage-manager_actors ol {
   list-style: none;
-  padding-inline-start: 0;
-}
-
-.stage-manager_actors > ol {
+  margin: 0;
   padding-inline-start: 0;
 }
 
@@ -297,21 +294,46 @@ li.ui_key_moment_controller.active:not(:last-child) {
   background: var(--list-item-even-bg);
 }
 
-.stage-manager_actors li:last-child > ol {
-  /* Only for layer (container) items
-     * This way there's a drop zone to insert the drop after the li.
-     */
-  padding-bottom: 0.1em;
+/******************************************************************************
+stage manager actors (document manager)
+*******************************************************************************/
+
+.stage-manager_actors {
+  border: 1px solid #999;
+  margin: 1em 0;
 }
 
 .stage-manager_actors li {
-  padding: calc(var(--indicator-padding) * 0.5) 0;
+  padding: calc(var(--indicator-padding)) 0 0;
 }
 
 .stage-manager_actors li > :first-child {
   margin-inline-start: calc(
-    var(--indentation-width, 1em) * var(--structural-depth, 0)
+    var(--indentation-width, 1em) * var(--structural-depth, 0) + 0.25em
   );
+}
+
+.stage-manager_actors li > ol {
+  margin-top: calc(var(--indicator-padding));
+}
+
+.stage-manager_actors li:last-child > ol {
+  /* Only for layer (container) items
+   * This way there's a drop zone to insert the drop after the li.
+   */
+  padding-bottom: 0.1em;
+}
+
+.stage-manager_actors li > * {
+  vertical-align: middle;
+  /* stylelint-disable-next-line declaration-property-value-no-unknown */
+  vertical-align: -webkit-baseline-middle;
+}
+
+.stage-manager_actors button {
+  background: none;
+  border: 0;
+  padding: 0 0.5em;
 }
 
 :is(
@@ -441,12 +463,6 @@ li.ui_key_moment_controller.active:not(:last-child) {
   ).drop_target_indicator-insert::before {
   border: var(--indicator-padding) solid var(--drop-indicator-color);
   padding: 0;
-}
-
-.stage-manager_actors li > * {
-  vertical-align: middle;
-  /* stylelint-disable-next-line declaration-property-value-no-unknown */
-  vertical-align: -webkit-baseline-middle;
 }
 
 /******************************************************************************
