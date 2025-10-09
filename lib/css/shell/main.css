@@ -1381,25 +1381,21 @@ button:is(.ui_style_patches_map-item-value, .ui_node_spec_map-item-value) {
 collapsible mixin
 *******************************************************************************/
 
-.ui_collapsible_mixin-closed {
-  padding-block: 0;
-}
-
-.ui_collapsible_mixin-closed > :not(legend) {
+.ui_collapsible_mixin-closed > :not(.sidebar-group-title) {
   display: none;
 }
 
-.ui_collapsible_mixin > legend {
+.ui_collapsible_mixin > .sidebar-group-title {
   display: flex;
   justify-content: space-between;
 }
 
-.ui_collapsible_mixin > legend::after {
+.ui_collapsible_mixin > .sidebar-group-title::after {
   display: inline-block;
   content: var(--chevron-down);
 }
 
-.ui_collapsible_mixin-open > legend::after {
+.ui_collapsible_mixin-open > .sidebar-group-title::after {
   content: var(--chevron-up);
 }
 

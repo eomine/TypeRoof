@@ -6292,22 +6292,20 @@ class TypeSpecRampController extends _BaseContainerComponent {
     // BUT: we may need a mechanism to handle typeSpec inheritance!
     // widgetBus.wrapper.setProtocolHandlerImplementation(
     //    ...SimpleProtocolHandler.create('animationProperties@'));
-    const typeSpecManagerContainer = widgetBus.domTool.createElement(
-        "fieldset",
-        { class: "type_spec-manager" },
-      ),
-      propertiesManagerContainer = widgetBus.domTool.createElement("fieldset", {
-        class: "properties-manager",
+    const typeSpecManagerContainer = widgetBus.domTool.createElement("div", {
+        class: "sidebar-group type_spec-manager",
       }),
-      stylePatchesManagerContainer = widgetBus.domTool.createElement(
-        "fieldset",
-        { class: "style_patches-manager" },
-      ),
-      documentManagerContainer = widgetBus.domTool.createElement("fieldset", {
-        class: "document-manager",
+      propertiesManagerContainer = widgetBus.domTool.createElement("div", {
+        class: "sidebar-group properties-manager",
       }),
-      nodeSpecManagerContainer = widgetBus.domTool.createElement("fieldset", {
-        class: "node_spec-manager",
+      stylePatchesManagerContainer = widgetBus.domTool.createElement("div", {
+        class: "sidebar-group style_patches-manager",
+      }),
+      documentManagerContainer = widgetBus.domTool.createElement("div", {
+        class: "sidebar-group document-manager",
+      }),
+      nodeSpecManagerContainer = widgetBus.domTool.createElement("div", {
+        class: "sidebar-group node_spec-manager",
       }),
       zones = new Map([
         ..._zones,
@@ -6338,10 +6336,10 @@ class TypeSpecRampController extends _BaseContainerComponent {
     // widgetBus.insertElement(stageManagerContainer);
     super(widgetBus, zones);
 
-    collapsibleMixin(typeSpecManagerContainer, "legend");
-    collapsibleMixin(propertiesManagerContainer, "legend");
-    collapsibleMixin(stylePatchesManagerContainer, "legend");
-    collapsibleMixin(nodeSpecManagerContainer, "legend");
+    collapsibleMixin(typeSpecManagerContainer, ".sidebar-group-title");
+    collapsibleMixin(propertiesManagerContainer, ".sidebar-group-title");
+    collapsibleMixin(stylePatchesManagerContainer, ".sidebar-group-title");
+    collapsibleMixin(nodeSpecManagerContainer, ".sidebar-group-title");
 
     const typeSpecDefaultsMap = _getTypeSpecDefaultsMap(
       widgetBus.getEntry(originTypeSpecPath).dependencies,
@@ -6384,8 +6382,8 @@ class TypeSpecRampController extends _BaseContainerComponent {
         { zone: "type_spec-manager" },
         [],
         StaticTag,
-        "legend",
-        {},
+        "div",
+        { class: "sidebar-group-title" },
         "TypeSpec Manager",
       ],
       [
@@ -6432,8 +6430,8 @@ class TypeSpecRampController extends _BaseContainerComponent {
         { zone: "properties-manager" },
         [],
         StaticTag,
-        "legend",
-        {},
+        "div",
+        { class: "sidebar-group-title" },
         "TypeSpec Properties",
       ],
       [
@@ -6450,8 +6448,8 @@ class TypeSpecRampController extends _BaseContainerComponent {
         { zone: "style_patches-manager" },
         [],
         StaticTag,
-        "legend",
-        {},
+        "div",
+        { class: "sidebar-group-title" },
         "Styles Manager",
       ],
       [
@@ -6524,8 +6522,8 @@ class TypeSpecRampController extends _BaseContainerComponent {
         { zone: "node_spec-manager" },
         [],
         StaticTag,
-        "legend",
-        {},
+        "div",
+        { class: "sidebar-group-title" },
         "NodeSpec Manager",
       ],
       [
