@@ -10,13 +10,18 @@
 general settings (font / layout)
 *******************************************************************************/
 
-.general-settings label > span:first-child {
-  display: block;
-  margin-bottom: 0.35em;
+.general-settings {
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+  padding: 1em;
 }
 
-label.ui_font-select {
-  margin-bottom: 0.25em;
+.general-settings label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
 }
 
 button.ui_font-select {
