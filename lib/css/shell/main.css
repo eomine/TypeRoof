@@ -1381,21 +1381,33 @@ button:is(.ui_style_patches_map-item-value, .ui_node_spec_map-item-value) {
 collapsible mixin
 *******************************************************************************/
 
-.ui_collapsible_mixin-closed > :not(.sidebar-group-title) {
+.ui_collapsible_mixin {
+  padding: 1em;
+}
+
+.ui_collapsible_mixin-closed > :not(.ui_collapsible_mixin_toggler) {
   display: none;
 }
 
-.ui_collapsible_mixin > .sidebar-group-title {
+.ui_collapsible_mixin_toggler {
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
+  font-weight: 600;
+  margin: -1em;
+  padding: 0.5em 1em;
 }
 
-.ui_collapsible_mixin > .sidebar-group-title::after {
+.ui_collapsible_mixin_toggler::after {
   display: inline-block;
   content: var(--chevron-down);
 }
 
-.ui_collapsible_mixin-open > .sidebar-group-title::after {
+.ui_collapsible_mixin-open > .ui_collapsible_mixin_toggler {
+  margin-bottom: 1em;
+}
+
+.ui_collapsible_mixin-open > .ui_collapsible_mixin_toggler::after {
   content: var(--chevron-up);
 }
 

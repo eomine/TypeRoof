@@ -117,12 +117,6 @@ sidebar group
   padding: 0 1em;
 }
 
-.sidebar-group-title {
-  cursor: pointer;
-  font-weight: 600;
-  padding: 0.5em 0;
-}
-
 .sidebar-group h3 {
   margin: 1em 0 !important;
 }
