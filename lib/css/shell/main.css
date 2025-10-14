@@ -1383,18 +1383,18 @@ button:is(.ui_style_patches_map-item-value, .ui_node_spec_map-item-value) {
 }
 
 /******************************************************************************
-collapsible mixin
+collapsible
 *******************************************************************************/
 
-.ui_collapsible_mixin {
+.ui_collapsible {
   padding: 1em;
 }
 
-.ui_collapsible_mixin-closed > :not(.ui_collapsible_mixin_toggler) {
+.ui_collapsible-closed > .ui_collapsible-contents {
   display: none;
 }
 
-.ui_collapsible_mixin_toggler {
+.ui_collapsible-toggler {
   display: flex;
   justify-content: space-between;
   cursor: pointer;
@@ -1403,16 +1403,16 @@ collapsible mixin
   padding: 0.5em 1em;
 }
 
-.ui_collapsible_mixin_toggler::after {
+.ui_collapsible-toggler::after {
   display: inline-block;
   content: var(--chevron-down);
 }
 
-.ui_collapsible_mixin-open > .ui_collapsible_mixin_toggler {
+.ui_collapsible-opened > .ui_collapsible-toggler {
   margin-bottom: 1em;
 }
 
-.ui_collapsible_mixin-open > .ui_collapsible_mixin_toggler::after {
+.ui_collapsible-opened > .ui_collapsible-toggler::after {
   content: var(--chevron-up);
 }
 
