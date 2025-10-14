@@ -16,8 +16,7 @@ import {
 } from "../basics.mjs";
 
 import {
-  collapsibleMixin,
-  StaticNode,
+  Collapsible,
   StaticTag,
   UILineOfTextInput,
   DynamicTag,
@@ -6292,29 +6291,22 @@ class TypeSpecRampController extends _BaseContainerComponent {
     // BUT: we may need a mechanism to handle typeSpec inheritance!
     // widgetBus.wrapper.setProtocolHandlerImplementation(
     //    ...SimpleProtocolHandler.create('animationProperties@'));
-    const typeSpecManagerContainer = widgetBus.domTool.createElement("div", {
-        class: "sidebar-group type_spec-manager",
-      }),
-      propertiesManagerContainer = widgetBus.domTool.createElement("div", {
-        class: "sidebar-group properties-manager",
-      }),
-      stylePatchesManagerContainer = widgetBus.domTool.createElement("div", {
-        class: "sidebar-group style_patches-manager",
-      }),
-      documentManagerContainer = widgetBus.domTool.createElement("div", {
-        class: "sidebar-group document-manager",
-      }),
-      nodeSpecManagerContainer = widgetBus.domTool.createElement("div", {
-        class: "sidebar-group node_spec-manager",
-      }),
-      zones = new Map([
-        ..._zones,
-        ["type_spec-manager", typeSpecManagerContainer],
-        ["properties-manager", propertiesManagerContainer],
-        ["style_patches-manager", stylePatchesManagerContainer],
-        ["document-manager", documentManagerContainer],
-        ["node_spec-manager", nodeSpecManagerContainer],
-      ]),
+    // const typeSpecManagerContainer = widgetBus.domTool.createElement("div", {
+    //     class: "sidebar-group type_spec-manager",
+    //   }),
+    //   propertiesManagerContainer = widgetBus.domTool.createElement("div", {
+    //     class: "sidebar-group properties-manager",
+    //   }),
+    //   stylePatchesManagerContainer = widgetBus.domTool.createElement("div", {
+    //     class: "sidebar-group style_patches-manager",
+    //   }),
+    //   documentManagerContainer = widgetBus.domTool.createElement("div", {
+    //     class: "sidebar-group document-manager",
+    //   }),
+    //   nodeSpecManagerContainer = widgetBus.domTool.createElement("div", {
+    //     class: "sidebar-group node_spec-manager",
+    //   }),
+    const zones = new Map([..._zones]),
       typeSpecRelativePath = Path.fromParts(".", "typeSpec"),
       originTypeSpecPath = widgetBus.rootPath.append(...typeSpecRelativePath);
     widgetBus.wrapper.setProtocolHandlerImplementation(
@@ -6335,11 +6327,6 @@ class TypeSpecRampController extends _BaseContainerComponent {
     );
     // widgetBus.insertElement(stageManagerContainer);
     super(widgetBus, zones);
-
-    collapsibleMixin(typeSpecManagerContainer, ".sidebar-group-title");
-    collapsibleMixin(propertiesManagerContainer, ".sidebar-group-title");
-    collapsibleMixin(stylePatchesManagerContainer, ".sidebar-group-title");
-    collapsibleMixin(nodeSpecManagerContainer, ".sidebar-group-title");
 
     const typeSpecDefaultsMap = _getTypeSpecDefaultsMap(
       widgetBus.getEntry(originTypeSpecPath).dependencies,
@@ -6373,126 +6360,113 @@ class TypeSpecRampController extends _BaseContainerComponent {
         isInheritingPropertyFn,
         typeSpecDefaultsMap,
       ],
-      [{ zone: "main" }, [], StaticNode, documentManagerContainer],
-      [{ zone: "main" }, [], StaticNode, stylePatchesManagerContainer],
-      [{ zone: "main" }, [], StaticNode, typeSpecManagerContainer],
-      [{ zone: "main" }, [], StaticNode, propertiesManagerContainer],
-      [{ zone: "main" }, [], StaticNode, nodeSpecManagerContainer],
       [
-        { zone: "type_spec-manager" },
+        { zone: "main" },
         [],
-        StaticTag,
-        "div",
-        { class: "sidebar-group-title" },
+        Collapsible,
         "TypeSpec Manager",
-      ],
-      [
-        {
-          zone: "type_spec-manager",
-        },
-        [],
-        SelectAndDragByOptions,
-        "Create",
-        "", //'drag and drop into Rap-Editor.'
         [
-          // options [type, label, value]
           [
-            DATA_TRANSFER_TYPES.TYPE_SPEC_TYPE_SPEC_CREATE,
-            "Type Spec",
-            "TypeSpec",
+            {},
+            [],
+            SelectAndDragByOptions,
+            "Create",
+            "", //'drag and drop into Rap-Editor.'
+            [
+              // options [type, label, value]
+              [
+                DATA_TRANSFER_TYPES.TYPE_SPEC_TYPE_SPEC_CREATE,
+                "Type Spec",
+                "TypeSpec",
+              ],
+            ],
+          ],
+          [
+            {},
+            [
+              ["typeSpec/children", "activeActors"],
+              ["editingTypeSpec", "editingActor"],
+            ],
+            TypeSpecTreeEditor,
+            {
+              // dataTransferTypes
+              PATH: DATA_TRANSFER_TYPES.TYPE_SPEC_TYPE_SPEC_PATH,
+              CREATE: DATA_TRANSFER_TYPES.TYPE_SPEC_TYPE_SPEC_CREATE,
+            },
+          ],
+          [
+            {},
+            [["typeSpec/children", "rootCollection"]],
+            WasteBasketDropTarget,
+            "Delete",
+            "", //'drag and drop into trash-bin.'
+            [DATA_TRANSFER_TYPES.TYPE_SPEC_TYPE_SPEC_PATH],
           ],
         ],
       ],
       [
-        { zone: "type_spec-manager" },
-        [
-          ["typeSpec/children", "activeActors"],
-          ["editingTypeSpec", "editingActor"],
-        ],
-        TypeSpecTreeEditor,
-        {
-          // dataTransferTypes
-          PATH: DATA_TRANSFER_TYPES.TYPE_SPEC_TYPE_SPEC_PATH,
-          CREATE: DATA_TRANSFER_TYPES.TYPE_SPEC_TYPE_SPEC_CREATE,
-        },
-      ],
-      [
-        {
-          zone: "type_spec-manager",
-        },
-        [["typeSpec/children", "rootCollection"]],
-        WasteBasketDropTarget,
-        "Delete",
-        "", //'drag and drop into trash-bin.'
-        [DATA_TRANSFER_TYPES.TYPE_SPEC_TYPE_SPEC_PATH],
-      ],
-      [
-        { zone: "properties-manager" },
+        { zone: "main" },
         [],
-        StaticTag,
-        "div",
-        { class: "sidebar-group-title" },
+        Collapsible,
         "TypeSpec Properties",
-      ],
-      [
-        {},
         [
-          ["editingTypeSpec", "typeSpecPath"],
-          ["typeSpec/children", "children"],
-          ["typeSpec", "rootTypeSpec"],
+          [
+            {},
+            [
+              ["editingTypeSpec", "typeSpecPath"],
+              ["typeSpec/children", "children"],
+              ["typeSpec", "rootTypeSpec"],
+            ],
+            TypeSpecPropertiesManager,
+            new Map([...zones]),
+          ],
         ],
-        TypeSpecPropertiesManager,
-        new Map([...zones, ["main", propertiesManagerContainer]]),
       ],
       [
-        { zone: "style_patches-manager" },
+        { zone: "main" },
         [],
-        StaticTag,
-        "div",
-        { class: "sidebar-group-title" },
+        Collapsible,
         "Styles Manager",
-      ],
-      [
-        {
-          zone: "style_patches-manager",
-          relativeRootPath: Path.fromParts(".", "stylePatchesSource"),
-        },
         [
-          [".", "childrenOrderedMap"],
-          ["../editingStylePatch", "stylePatchPath"],
+          // [
+          //   {
+          //     relativeRootPath: Path.fromParts(".", "stylePatchesSource"),
+          //   },
+          //   [
+          //     [".", "childrenOrderedMap"],
+          //     ["../editingStylePatch", "stylePatchPath"],
+          //   ],
+          //   UIStylePatchesMap, // search for e.g. UIAxesMathLocation in videoproof-array-v2.mjs
+          //   zones,
+          //   [], // eventHandlers
+          //   null, // label 'Style Patches'
+          //   true, // dragAndDrop
+          // ],
+          // [
+          //   {},
+          //   [["typeSpec/children", "rootCollection"]],
+          //   WasteBasketDropTarget,
+          //   "Delete",
+          //   "", //'drag and drop into trash-bin.'
+          //   [
+          //     DATA_TRANSFER_TYPES.TYPE_SPEC_STYLE_PATCH_PATH,
+          //     DATA_TRANSFER_TYPES.TYPE_SPEC_STYLE_PATCH_LINK_PATH,
+          //     // to delete the axesLocations values coming from UIAxesMathLocation
+          //     DATA_TRANSFER_TYPES.AXESMATH_LOCATION_VALUE_PATH,
+          //   ],
+          // ],
+          // [
+          //   {
+          //     relativeRootPath: Path.fromParts(".", "stylePatchesSource"),
+          //   },
+          //   [
+          //     [".", "childrenOrderedMap"],
+          //     ["../editingStylePatch", "stylePatchPath"],
+          //   ],
+          //   StylePatchPropertiesManager,
+          //   new Map([...zones, ["main", stylePatchesManagerContainer]]),
+          // ],
         ],
-        UIStylePatchesMap, // search for e.g. UIAxesMathLocation in videoproof-array-v2.mjs
-        zones,
-        [], // eventHandlers
-        null, // label 'Style Patches'
-        true, // dragAndDrop
-      ],
-      [
-        {
-          zone: "style_patches-manager",
-        },
-        [["typeSpec/children", "rootCollection"]],
-        WasteBasketDropTarget,
-        "Delete",
-        "", //'drag and drop into trash-bin.'
-        [
-          DATA_TRANSFER_TYPES.TYPE_SPEC_STYLE_PATCH_PATH,
-          DATA_TRANSFER_TYPES.TYPE_SPEC_STYLE_PATCH_LINK_PATH,
-          // to delete the axesLocations values coming from UIAxesMathLocation
-          DATA_TRANSFER_TYPES.AXESMATH_LOCATION_VALUE_PATH,
-        ],
-      ],
-      [
-        {
-          zone: "style_patches-manager",
-          relativeRootPath: Path.fromParts(".", "stylePatchesSource"),
-        },
-        [
-          [".", "childrenOrderedMap"],
-          ["../editingStylePatch", "stylePatchPath"],
-        ],
-        StylePatchPropertiesManager,
-        new Map([...zones, ["main", stylePatchesManagerContainer]]),
       ],
       //  , [
       //        {
@@ -6511,7 +6485,7 @@ class TypeSpecRampController extends _BaseContainerComponent {
         {},
         [],
         ProseMirrorContext,
-        new Map([...zones, ["main", documentManagerContainer]]),
+        new Map([...zones]),
         // proseMirrorSettings
         { zone: "layout" },
         originTypeSpecPath,
@@ -6519,58 +6493,56 @@ class TypeSpecRampController extends _BaseContainerComponent {
         { zone: "main" },
       ],
       [
-        { zone: "node_spec-manager" },
+        { zone: "main" },
         [],
-        StaticTag,
-        "div",
-        { class: "sidebar-group-title" },
+        Collapsible,
         "NodeSpec Manager",
-      ],
-      [
-        { zone: "node_spec-manager" },
         [
-          ["./proseMirrorSchema/nodes", "childrenOrderedMap"],
-          ["editingNodeSpecPath", "nodeSpecPath"],
+          [
+            {},
+            [
+              ["./proseMirrorSchema/nodes", "childrenOrderedMap"],
+              ["editingNodeSpecPath", "nodeSpecPath"],
+            ],
+            UINodeSpecMap,
+            new Map([...zones]),
+            [], // eventHandlers
+            "NodeSpec-Map",
+            true, // dragEntries (dragAndDrop)
+          ],
+          [
+            {},
+            [
+              ["./proseMirrorSchema/nodes", "childrenOrderedMap"],
+              ["editingNodeSpecPath", "nodeSpecPath"],
+            ],
+            NodeSpecPropertiesManager,
+            new Map([...zones]),
+          ],
+          [
+            {},
+            [
+              ["./nodeSpecToTypeSpec", "childrenOrderedMap"],
+              // In this configuration we map "NodeSpec to TypeSpec"
+              // The directionality is not necessarily obvious, but
+              // NodeSpec is the key as a nodeSpec can only have one
+              // TypeSpec, TypeSpec is the value as we can have multiple
+              // NodeSpecs use the same TypeSpec.
+              // However, the "TypeSpec" is called the "source", so
+              // source and target may not be the right words.
+              // sourceMap is inherited from UIStylePatchesLinksMap
+              // maybe we need to change that in here.
+              ["./typeSpec", "sourceMap"], // these are the values of the map
+              ["./proseMirrorSchema/nodes", "targetMap"], // these are the keys of the map
+            ],
+            // based on UIStylePatchesLinksMap
+            UINodeSpecToTypeSpecLinksMap,
+            new Map([...zones]),
+            [], // eventHandlers
+            "NodeSpec to TypeSpec",
+            true, // dragEntries (dragAndDrop)
+          ],
         ],
-        UINodeSpecMap,
-        new Map([...zones, ["main", nodeSpecManagerContainer]]),
-        [], // eventHandlers
-        "NodeSpec-Map",
-        true, // dragEntries (dragAndDrop)
-      ],
-      [
-        {
-          zone: "node_spec-manager",
-        },
-        [
-          ["./proseMirrorSchema/nodes", "childrenOrderedMap"],
-          ["editingNodeSpecPath", "nodeSpecPath"],
-        ],
-        NodeSpecPropertiesManager,
-        new Map([...zones, ["main", nodeSpecManagerContainer]]),
-      ],
-      [
-        { zone: "node_spec-manager" },
-        [
-          ["./nodeSpecToTypeSpec", "childrenOrderedMap"],
-          // In this configuration we map "NodeSpec to TypeSpec"
-          // The directionality is not necessarily obvious, but
-          // NodeSpec is the key as a nodeSpec can only have one
-          // TypeSpec, TypeSpec is the value as we can have multiple
-          // NodeSpecs use the same TypeSpec.
-          // However, the "TypeSpec" is called the "source", so
-          // source and target may not be the right words.
-          // sourceMap is inherited from UIStylePatchesLinksMap
-          // maybe we need to change that in here.
-          ["./typeSpec", "sourceMap"], // these are the values of the map
-          ["./proseMirrorSchema/nodes", "targetMap"], // these are the keys of the map
-        ],
-        // based on UIStylePatchesLinksMap
-        UINodeSpecToTypeSpecLinksMap,
-        new Map([...zones, ["main", nodeSpecManagerContainer]]),
-        [], // eventHandlers
-        "NodeSpec to TypeSpec",
-        true, // dragEntries (dragAndDrop)
       ],
     ];
     this._initWidgets(widgets);
