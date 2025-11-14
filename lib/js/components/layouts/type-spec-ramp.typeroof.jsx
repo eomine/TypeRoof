@@ -2503,13 +2503,40 @@ class MapSelectButton extends DynamicTag {
     }
 }
 
+class MapSelectButtonAndLabel extends _BaseContainerComponent {
+    constructor(widgetBus, args) {
+        const localZoneElement = widgetBus.domTool.createElement("div", {
+                class: "ui_style_patches_map-item-with-label",
+            }),
+            zones = new Map([["local", localZoneElement]]),
+            [label, onClickHandler] = args;
+        super(widgetBus, zones);
+        this._insertElement(localZoneElement);
+
+        const widgets = [
+            [{ zone: "local" }, [], StaticTag, "span", {}, label],
+            [
+                { zone: "local" },
+                [],
+                MapSelectButton,
+                "button",
+                { class: "ui_style_patches_map-item-value" },
+                [["click", onClickHandler]],
+                identity,
+                "Edit",
+            ],
+        ];
+        this._initWidgets(widgets);
+    }
+}
+
 class UIStylePatchesMap extends _UIBaseMap {
     // jshint ignore: start
     static ROOT_CLASS = `ui_style_patches_map`;
     static BASE_CLASSES = [...super.BASE_CLASSES, super.ROOT_CLASS];
     static TYPE_CLASS_PART = null;
     static VISUAL_ORDER_STRATEGY = _UIBaseMap.VISUAL_ORDER_STRATEGY_NATURAL;
-    static KEY_ADD_BUTTON_LABEL = "add style patch";
+    static KEY_ADD_BUTTON_LABEL = "add style";
     static KEY_DATA_TRANSFER_TYPE =
         DATA_TRANSFER_TYPES.TYPE_SPEC_STYLE_PATCH_PATH;
 
@@ -2550,25 +2577,17 @@ class UIStylePatchesMap extends _UIBaseMap {
                     "activePath",
                 ],
             ],
-            // Should be a really simple item maybe displaying the label
-            // Maybe we could edit the label.
-            // But rather it is just to select, on click and to display
-            // as selected, e.g. bold label
-            Constructor = MapSelectButton,
             args = [
-                // Want this to be a Button.
-                "button",
-                { class: "ui_style_patches_map-item-value" },
-                [["click", (/*event*/) => this._onClickHandler(key)]],
-                () => "Edit",
-                "Edit",
+                // FIXME hardcoded until I figure out how to obtain the label
+                key === "bold italic" ? "Composite" : "Simple",
+                () => this._onClickHandler(key),
             ];
         return this._initWrapper(
             childWidgetBus,
             settings,
             dependencyMappings,
-            Constructor,
-            ...args,
+            MapSelectButtonAndLabel,
+            args,
         );
     }
 

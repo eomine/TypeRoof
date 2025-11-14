@@ -1206,6 +1206,19 @@ select and drag
     min-width: 5.3em;
 }
 
+.ui_style_patches_map-item-with-label {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.ui_style_patches_map-item-with-label > span {
+    font-size: 0.9em;
+    text-align: left;
+    margin-left: 0.5em;
+    width: 6em;
+}
+
 :is(.ui_style_patches_map-item-value, .ui_node_spec_map-item-value).active {
     font-weight: 700;
 }
