@@ -64,7 +64,6 @@ import {
     LeadingAlgorithmModel,
     deserializeLeadingAlgorithmModel,
     availableStylePatchTypes,
-    availableStylePatchesShortLabel,
 } from "../type-spec-models.mjs";
 
 import {
@@ -2561,15 +2560,8 @@ class UIStylePatchesMap extends _UIBaseMap {
                 "button",
                 { class: "ui_style_patches_map-item-value" },
                 [["click", (/*event*/) => this._onClickHandler(key)]],
-                function (typeKey) {
-                    const typeLabel = availableStylePatchesShortLabel.has(
-                        typeKey,
-                    )
-                        ? availableStylePatchesShortLabel.get(typeKey)
-                        : availableStylePatchTypes.get(typeKey).get("label")
-                              .value;
-                    return `${typeLabel} Edit`;
-                },
+                () => "Edit",
+                "Edit",
             ];
         return this._initWrapper(
             childWidgetBus,
