@@ -1,7 +1,6 @@
 @import url("../fonts.css");
 @import url("./variables.css");
 @import url("./typography.css");
-@import url("./icons.css");
 @import url("./elements.css");
 @import url("./layout.css");
 @import url("./docs.css");
@@ -772,30 +771,42 @@ number and range color input
 
 /******************************************************************************
 number and range input
+ui plain select
 *******************************************************************************/
 
-.number-and-range-input {
+.number-and-range-input,
+.ui_plain_select {
     align-items: center;
     display: flex;
     gap: 0.25em;
     padding: 1em 0;
+
+    label {
+        width: 35%;
+    }
+
+    input[type="number"] {
+        width: 15%;
+    }
+
+    input[type="range"] {
+        width: 30%;
+    }
+
+    button {
+        margin-left: auto;
+        width: 20%;
+    }
 }
 
-.number-and-range-input label {
-    width: 35%;
-}
+/******************************************************************************
+select and drag
+*******************************************************************************/
 
-.number-and-range-input input[type="number"] {
-    width: 15%;
-}
-
-.number-and-range-input input[type="range"] {
-    width: 30%;
-}
-
-.number-and-range-input button {
-    margin-left: auto;
-    width: 20%;
+.select_and_drag > label {
+    align-items: center;
+    display: flex;
+    gap: 0.25em;
 }
 
 /**************************************************************************** */
@@ -1033,7 +1044,9 @@ number and range input
 
 .ui_alignment input + .ui_alignment-radio_icon {
     display: block;
-    font-size: inherit;
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+    font-family: "Material Symbols Outlined";
+    font-size: 2rem;
     width: 3em;
     height: 3em;
     background: no-repeat;
@@ -1041,11 +1054,13 @@ number and range input
     background-position: center center;
     margin: 0 auto;
     background-color: white;
+    color: #ccc;
     position: absolute;
     z-index: 1;
 }
 
 .ui_alignment label.ui_alignment-radio_label {
+    cursor: pointer;
     display: inline-block;
     vertical-align: text-top;
     position: relative;
@@ -1059,36 +1074,8 @@ number and range input
     z-index: 0;
 }
 
-.ui_alignment input.ui_alignment-left + .ui_alignment-radio_icon {
-    background-image: var(--alignment-left-icon);
-}
-
-.ui_alignment input.ui_alignment-left:checked + .ui_alignment-radio_icon {
-    background-image: var(--alignment-left-active-icon);
-}
-
-.ui_alignment input.ui_alignment-center + .ui_alignment-radio_icon {
-    background-image: var(--alignment-center-icon);
-}
-
-.ui_alignment input.ui_alignment-center:checked + .ui_alignment-radio_icon {
-    background-image: var(--alignment-center-active-icon);
-}
-
-.ui_alignment input.ui_alignment-right + .ui_alignment-radio_icon {
-    background-image: var(--alignment-right-icon);
-}
-
-.ui_alignment input.ui_alignment-right:checked + .ui_alignment-radio_icon {
-    background-image: var(--alignment-right-active-icon);
-}
-
-.ui_alignment input.ui_alignment-justify + .ui_alignment-radio_icon {
-    background-image: var(--alignment-justify-icon);
-}
-
-.ui_alignment input.ui_alignment-justify:checked + .ui_alignment-radio_icon {
-    background-image: var(--alignment-justify-active-icon);
+.ui_alignment input:checked + .ui_alignment-radio_icon {
+    color: black;
 }
 
 .ui_axes_math-locations_sum-items {
@@ -1427,6 +1414,7 @@ collapsible
 
 .ui_collapsible-toggler {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     cursor: pointer;
     font-weight: 600;
@@ -1434,12 +1422,16 @@ collapsible
 }
 
 .ui_collapsible-toggler::after {
-    display: inline-block;
-    content: var(--chevron-down);
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+    font-family: "Material Symbols Outlined";
+    font-size: 1.3rem;
+    font-variation-settings: "wght" 200;
+    line-height: 0.8rem;
+    content: "\e313";
 }
 
 .ui_collapsible-opened > .ui_collapsible-toggler::after {
-    content: var(--chevron-up);
+    content: "\e316";
 }
 
 .ui_collapsible-contents {
@@ -1832,6 +1824,11 @@ dimension sequence
 }
 /* stylelint-enable */
 
+.prosemirror-host {
+    /* so the background color fills the entire layout */
+    min-height: 100%;
+}
+
 :where(.ProseMirror, .typeroof-document) {
     *[data-unknown-type] {
         outline: 4px solid red;
@@ -1862,6 +1859,9 @@ dimension sequence
 
     * {
         line-height: var(--line-height);
+
+        /* FIXME: not functioning in Firefox, requires workaround! */
+        text-box: trim-start text;
     }
 
     /* FIXME: this is temporary, margins need to be
@@ -1870,7 +1870,11 @@ dimension sequence
  * enough for now runion/automation approach.
  */
     > *:not(:first-child) {
-        margin-top: var(--line-height);
+        margin-block-start: var(--margin-block-start, 0);
+    }
+
+    > *:not(:last-child) {
+        margin-block-end: var(--margin-block-end, 0);
     }
 }
 
@@ -1902,5 +1906,45 @@ dimension sequence
     &:where(.is-in-font.is-default-value)
         .ui_boolean_ot_feature-label-content::after {
         content: "";
+    }
+}
+
+.ui-language_tag-info {
+    background: white;
+    padding: 0.3em;
+}
+
+.ui_language_subtag_info ~ .ui_language_subtag_info {
+    padding-block-start: 1.3em;
+}
+
+.ui_language_subtag_info-list {
+    margin: 0;
+
+    dt {
+        display: inline;
+        font-weight: bolder;
+    }
+
+    dt::after {
+        content: ":";
+    }
+
+    dd + dt::before {
+        display: block;
+        content: "";
+    }
+
+    dd {
+        display: inline;
+        margin-inline-start: 0;
+    }
+
+    dd::before {
+        content: " ";
+    }
+
+    dd + dd::before {
+        content: ", ";
     }
 }
