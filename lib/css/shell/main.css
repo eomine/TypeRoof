@@ -858,13 +858,15 @@ ui plain select
 *******************************************************************************/
 
 .number-and-range-input,
+.ui_generic_select,
 .ui_plain_select {
     align-items: center;
-    display: flex;
+    display: flex !important;
     gap: 0.25em;
     padding: 0.25em 0;
 
-    label {
+    label,
+    .ui_generic_select-label {
         width: 35%;
     }
 
@@ -873,7 +875,7 @@ ui plain select
     }
 
     input[type="range"] {
-        width: 30%;
+        width: 20%;
     }
 
     button {
@@ -1736,6 +1738,28 @@ dimension sequence
     display: block;
 }
 
+.ui_generic_struct_container {
+    h3 {
+        --font-size-change: 1.25;
+
+        font-variation-settings: "opsz" 12;
+    }
+
+    > .ui-language_tag,
+    > .ui_leading-algorithm_container,
+    > .ui-margins,
+    > .ui_opentype_features_chooser,
+    > .manual_axes_locations {
+        margin-bottom: 2em;
+    }
+
+    > .ui-language_tag,
+    > .number-and-range-input + .ui_color_chooser,
+    > .ui_opentype_features_chooser {
+        margin-top: 2em;
+    }
+}
+
 /**************************************************************************** */
 
 .dialog-multi_select_fonts {
@@ -2026,6 +2050,17 @@ typespec properties > language
     dd + dd::before {
         content: ", ";
     }
+}
+
+/******************************************************************************
+checkbox
+*******************************************************************************/
+
+.ui_checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+    width: max-content;
 }
 
 /******************************************************************************
