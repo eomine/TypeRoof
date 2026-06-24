@@ -1316,70 +1316,45 @@ export class UIProseMirrorMenu extends _IDPublisherMixin(
     }
 }
 
-export class UIBoldItalicMenu extends _BaseComponent {
+export class UIStylesFloatingMenu extends _BaseComponent {
     constructor(widgetBus, originTypeSpecPath) {
         super(widgetBus);
         this._originTypeSpecPath = originTypeSpecPath;
-        this._styleToButton = new Map();
-        [this.element] = this._initTemplate();
+        [this.element, this._select] = this._initTemplate();
     }
 
     _getTemplate(h) {
         return (
             <div class="ui_prose_mirror_menu-simple">
-                <button type="button" data-style="bold">
-                    <span class="material-symbols-outlined">format_bold</span>
-                </button>
-                <button type="button" data-style="italic">
-                    <span class="material-symbols-outlined">format_italic</span>
-                </button>
+                <select></select>
             </div>
         );
     }
 
     _initTemplate() {
-        const container = this._getTemplate(this._domTool.h),
-            boldButton = container.querySelector("[data-style=bold]"),
-            italicButton = container.querySelector("[data-style=italic]");
+        const container = this._getTemplate(this._domTool.h);
+        const select = container.querySelector("select");
         this._insertElement(container);
-        this._styleToButton.set("bold", boldButton);
-        this._styleToButton.set("italic", italicButton);
-        container.addEventListener(
-            "pointerdown",
-            this._stylesClickHandler.bind(this),
-        );
-        return [container];
+        select.addEventListener("focus", this._onSelectFocus.bind(this));
+        select.addEventListener("change", this._onSelectInstance.bind(this));
+        return [container, select];
     }
 
-    _stylesClickHandler(event) {
-        event.preventDefault();
-        const button = event.target.closest("button");
-        if (!button) return;
-        const styleName = button.getAttribute("data-style");
-        if (!this._styleToButton.has(styleName) || !this._editorView) return;
-        if (button.disabled) return;
+    _onSelectFocus(event) {
+        event.stopPropagation();
+    }
 
-        const { dispatch, state } = this._editorView,
-            markType = state.schema.marks["generic-style"],
-            [, activeMarks] = getActiveNodesAndMarks(state),
-            genericStyleMark = state.schema.marks["generic-style"],
-            activeStyles = activeMarks.get(genericStyleMark) || [],
-            activeStylesSeparated = Array.from(activeStyles).flatMap((s) =>
-                s.split(" "),
-            );
-        let newStyleName = activeStylesSeparated.includes(styleName)
-            ? activeStylesSeparated.filter((s) => s !== styleName).join(" ")
-            : activeStylesSeparated.concat(styleName).toSorted().join(" ");
+    _onSelectInstance(event) {
+        event.stopPropagation();
+        if (!this._editorView) return;
 
-        // newStyleName must not be "" (the empty string). The result of
-        // no mark is achieved by removing the active mark, and that is the
-        // job of `toggleMark`. In the case of an "" newStyleName should
-        // just be styleName and toggleMark will remove it.
-        if (newStyleName === "") newStyleName = styleName;
+        const { dispatch, state } = this._editorView;
+        const markType = state.schema.marks["generic-style"];
+        const styleName = this._select.value;
 
         toggleMark(
             markType,
-            { "data-style-name": newStyleName },
+            { "data-style-name": styleName },
             {},
         )(state, dispatch);
     }
@@ -1387,38 +1362,29 @@ export class UIBoldItalicMenu extends _BaseComponent {
     _getTypeSpecPropertiesId = getTypeSpecPropertiesIdMethod;
     _getTypeSpecs = getTypeSpecsMethod;
 
+    _updateDropdown() {
+        this._select.replaceChildren();
+
+        const font = this.getEntry("font").value;
+        font.instances.forEach((instance) => {
+            const option = this._domTool.createElement("option");
+            const value = instance[0].toLowerCase();
+            option.value = value;
+            option.textContent = instance[0];
+            option.selected = value === "regular";
+            this._select.append(option);
+        });
+    }
+
     updateView(view) {
         if (!view) return;
 
         this._editorView = view;
-        const state = this._editorView.state,
-            setsOfStyles = new Map(),
-            allStylesSuperSet = new Set(["bold", "italic", "bold italic"]),
-            commonSubSet = new Set();
-
-        for (const style of allStylesSuperSet) {
-            if (
-                setsOfStyles.values().every((stylesSet) => stylesSet.has(style))
-            ) {
-                commonSubSet.add(style);
-            }
-        }
-
-        const [, activeMarks] = getActiveNodesAndMarks(state),
-            genericStyleMark = state.schema.marks["generic-style"],
-            activeStyles = activeMarks.get(genericStyleMark) || [],
-            activeStylesSeparated = new Set(
-                Array.from(activeStyles).flatMap((s) => s.split(" ")),
-            );
-        for (const styleName of allStylesSuperSet) {
-            const button = this._styleToButton.get(styleName);
-            if (!button) continue;
-
-            button.disabled = !commonSubSet.has(styleName);
-            button.classList[
-                activeStylesSeparated.has(styleName) ? "add" : "remove"
-            ]("active");
-        }
+        const { state } = this._editorView;
+        const [, activeMarks] = getActiveNodesAndMarks(state);
+        const genericStyleMark = state.schema.marks["generic-style"];
+        const activeStyles = activeMarks.get(genericStyleMark);
+        if (activeStyles) this._select.value = Array.from(activeStyles)[0];
 
         const coords = this._editorView.coordsAtPos(state.selection.from);
         this.element.style.left = `${coords.left}px`;
@@ -1430,6 +1396,10 @@ export class UIBoldItalicMenu extends _BaseComponent {
     }
 
     update(changedMap) {
+        if (changedMap.has("font")) {
+            this._updateDropdown();
+        }
+
         if (changedMap.has("nodeSpecToTypeSpec")) {
             this.updateView(this._editorView);
         }
