@@ -1419,6 +1419,10 @@ export class UIBoldItalicMenu extends _BaseComponent {
                 activeStylesSeparated.has(styleName) ? "add" : "remove"
             ]("active");
         }
+
+        const coords = this._editorView.coordsAtPos(state.selection.from);
+        this.element.style.left = `${coords.left}px`;
+        this.element.style.top = `${coords.bottom}px`;
     }
 
     destroyView() {
