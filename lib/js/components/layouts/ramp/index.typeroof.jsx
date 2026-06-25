@@ -21,7 +21,7 @@ import {
     NodeSpecToTypeSpecMapModel,
     NodeModel,
 } from "../../prosemirror/models.typeroof.jsx";
-import { Collapsible, UICheckboxInput } from "../../generic.mjs";
+import { Collapsible, StaticNode, UICheckboxInput } from "../../generic.mjs";
 import { GENERIC } from "../../registered-properties-definitions.mjs";
 import {
     isInheritingPropertyFn,
@@ -135,13 +135,9 @@ class RampController extends _BaseContainerComponent {
                 "div",
                 { class: "editor-manager-prosemirror" },
             ),
-            editorManagerContainer = widgetBus.domTool.createElement(
-                "div",
-                {
-                    class: "editor-manager",
-                },
-                proseMirrorEditorMenuContainer,
-            ),
+            editorManagerContainer = widgetBus.domTool.createElement("div", {
+                class: "editor-manager",
+            }),
             zones = new Map([
                 ..._zones,
                 ["properties-manager", propertiesManagerContainer],
@@ -205,6 +201,7 @@ class RampController extends _BaseContainerComponent {
                 isInheritingPropertyFn,
                 typeSpecDefaultsMap,
             ],
+            [{ zone: "main" }, [], StaticNode, proseMirrorEditorMenuContainer],
             [
                 { zone: "main" },
                 [],
