@@ -1914,6 +1914,7 @@ prosemirror menu
     button {
         vertical-align: top;
     }
+
     button.active {
         color: white;
         background: black;
