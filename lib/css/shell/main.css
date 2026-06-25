@@ -5,6 +5,10 @@
 @import url("./layout.css");
 @import url("./docs.css");
 
+.hidden {
+    display: none !important;
+}
+
 /******************************************************************************
 material symbols
 *******************************************************************************/
@@ -1928,7 +1932,11 @@ prosemirror menu
     }
 }
 
-.ui_prose_mirror_menu-simple {
+/******************************************************************************
+styles floating menu
+*******************************************************************************/
+
+.ui-styles-floating-menu {
     background-color: #eee;
     border: 1px solid #ddd;
     border-radius: 4px;

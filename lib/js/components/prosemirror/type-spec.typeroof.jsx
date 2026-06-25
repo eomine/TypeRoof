@@ -1320,12 +1320,14 @@ export class UIStylesFloatingMenu extends _BaseComponent {
     constructor(widgetBus, originTypeSpecPath) {
         super(widgetBus);
         this._originTypeSpecPath = originTypeSpecPath;
+        this._onSelectInstance = this._onSelectInstance.bind(this);
+        this._onWindowPointerDown = this._onWindowPointerDown.bind(this);
         [this.element, this._select] = this._initTemplate();
     }
 
     _getTemplate(h) {
         return (
-            <div class="ui_prose_mirror_menu-simple">
+            <div class="ui-styles-floating-menu">
                 <select></select>
             </div>
         );
@@ -1335,13 +1337,15 @@ export class UIStylesFloatingMenu extends _BaseComponent {
         const container = this._getTemplate(this._domTool.h);
         const select = container.querySelector("select");
         this._insertElement(container);
-        select.addEventListener("focus", this._onSelectFocus.bind(this));
-        select.addEventListener("change", this._onSelectInstance.bind(this));
+        select.addEventListener("change", this._onSelectInstance);
+        window.addEventListener("pointerdown", this._onWindowPointerDown);
         return [container, select];
     }
 
-    _onSelectFocus(event) {
-        event.stopPropagation();
+    _onWindowPointerDown(e) {
+        if (e.target.closest(".ProseMirror")) return;
+        if (e.target.closest(`.${this.element.className}`)) return;
+        this._hide();
     }
 
     _onSelectInstance(event) {
@@ -1359,6 +1363,14 @@ export class UIStylesFloatingMenu extends _BaseComponent {
         )(state, dispatch);
     }
 
+    _hide() {
+        this.element.classList.add("hidden");
+    }
+
+    _show() {
+        this.element.classList.remove("hidden");
+    }
+
     _getTypeSpecPropertiesId = getTypeSpecPropertiesIdMethod;
     _getTypeSpecs = getTypeSpecsMethod;
 
@@ -1366,12 +1378,17 @@ export class UIStylesFloatingMenu extends _BaseComponent {
         this._select.replaceChildren();
 
         const font = this.getEntry("font").value;
+        if (font.instances.length === 0) return;
+
+        const index = font.fontObject.variation.getDefaultInstanceIndex();
+        this._defaultValue = font.instances[index][0].toLowerCase();
+
         font.instances.forEach((instance) => {
             const option = this._domTool.createElement("option");
             const value = instance[0].toLowerCase();
             option.value = value;
             option.textContent = instance[0];
-            option.selected = value === "regular";
+            option.selected = value === this._defaultValue;
             this._select.append(option);
         });
     }
@@ -1380,19 +1397,35 @@ export class UIStylesFloatingMenu extends _BaseComponent {
         if (!view) return;
 
         this._editorView = view;
+        if (this._select.childElementCount === 0) return;
+
         const { state } = this._editorView;
         const [, activeMarks] = getActiveNodesAndMarks(state);
         const genericStyleMark = state.schema.marks["generic-style"];
         const activeStyles = activeMarks.get(genericStyleMark);
-        if (activeStyles) this._select.value = Array.from(activeStyles)[0];
+        this._select.value = activeStyles
+            ? Array.from(activeStyles)[0]
+            : this._defaultValue;
 
-        const coords = this._editorView.coordsAtPos(state.selection.from);
+        const { from, empty } = state.selection;
+        if (empty) {
+            this._hide();
+            return;
+        }
+
+        const coords = this._editorView.coordsAtPos(from);
         this.element.style.left = `${coords.left}px`;
         this.element.style.top = `${coords.bottom}px`;
+        this._show();
     }
 
     destroyView() {
         this._editorView = null;
+    }
+
+    destroy() {
+        this._select.removeEventListener("change", this._onSelectInstance);
+        window.removeEventListener("pointerdown", this._onWindowPointerDown);
     }
 
     update(changedMap) {
