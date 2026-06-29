@@ -7,6 +7,7 @@ import {
     PathModelOrEmpty,
     Path,
     BooleanModel,
+    StringModel,
     CoherenceFunction,
     deserializeSync,
     SERIALIZE_OPTIONS,
@@ -16,6 +17,7 @@ import {
     TypeSpecModel,
     StylePatchesMapModel,
 } from "../../type-spec-models.mjs";
+import { createRootFontStylePatchesCoherenceFunction } from "../type-stage/root-font-style-patches.mjs";
 import {
     ProseMirrorSchemaModel,
     NodeSpecToTypeSpecMapModel,
@@ -58,6 +60,9 @@ const RampModel = _BaseLayoutModel.createClass(
     // the root of all typeSpecs
     ["document", NodeModel],
     ["showParameters", BooleanModel],
+    // The font identity for which the style patches in "stylePatchesSource"
+    // were generated, see createRootFontStylePatchesCoherenceFunction.
+    ["rootFontStylePatchesKey", StringModel],
     CoherenceFunction.create(
         [
             "document",
@@ -117,6 +122,7 @@ const RampModel = _BaseLayoutModel.createClass(
             }
         },
     ),
+    createRootFontStylePatchesCoherenceFunction(),
 );
 
 class RampController extends _BaseContainerComponent {
