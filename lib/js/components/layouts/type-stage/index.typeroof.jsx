@@ -7,6 +7,7 @@ import {
     PathModelOrEmpty,
     Path,
     BooleanModel,
+    StringModel,
     CoherenceFunction,
     deserializeSync,
     SERIALIZE_OPTIONS,
@@ -16,6 +17,7 @@ import {
     TypeSpecModel,
     StylePatchesMapModel,
 } from "../../type-spec-models.mjs";
+import { createRootFontStylePatchesCoherenceFunction } from "./root-font-style-patches.mjs";
 import {
     ProseMirrorSchemaModel,
     NodeSpecToTypeSpecMapModel,
@@ -67,6 +69,9 @@ const TypeStageModel = _BaseLayoutModel.createClass(
     // the root of all typeSpecs
     ["document", NodeModel],
     ["showParameters", BooleanModel],
+    // The font identity for which the style patches in "stylePatchesSource"
+    // were generated, see createRootFontStylePatchesCoherenceFunction.
+    ["rootFontStylePatchesKey", StringModel],
     CoherenceFunction.create(
         [
             "document",
@@ -126,6 +131,7 @@ const TypeStageModel = _BaseLayoutModel.createClass(
             }
         },
     ),
+    createRootFontStylePatchesCoherenceFunction(),
 );
 
 class TypeStageController extends _BaseContainerComponent {
