@@ -1322,6 +1322,7 @@ export class UIStylesFloatingMenu extends _BaseComponent {
         this._originTypeSpecPath = originTypeSpecPath;
         this._onSelectInstance = this._onSelectInstance.bind(this);
         this._onWindowPointerDown = this._onWindowPointerDown.bind(this);
+        this._reposition = this._reposition.bind(this);
         [this.element, this._select] = this._initTemplate();
     }
 
@@ -1369,6 +1370,18 @@ export class UIStylesFloatingMenu extends _BaseComponent {
     _show() {
         this.element.classList.remove("hidden");
         window.addEventListener("pointerdown", this._onWindowPointerDown);
+        this._reposition();
+    }
+
+    _reposition() {
+        const { state } = this._editorView;
+        const { from } = state.selection;
+        const coords = this._editorView.coordsAtPos(from);
+        this.element.style.left = `${coords.left}px`;
+        this.element.style.top = `${coords.bottom}px`;
+        if (!this.element.classList.contains("hidden")) {
+            requestAnimationFrame(this._reposition);
+        }
     }
 
     _getTypeSpecPropertiesId = getTypeSpecPropertiesIdMethod;
@@ -1407,15 +1420,11 @@ export class UIStylesFloatingMenu extends _BaseComponent {
             ? Array.from(activeStyles)[0]
             : this._defaultValue;
 
-        const { from, empty } = state.selection;
-        if (empty) {
+        if (state.selection.empty) {
             this._hide();
             return;
         }
 
-        const coords = this._editorView.coordsAtPos(from);
-        this.element.style.left = `${coords.left}px`;
-        this.element.style.top = `${coords.bottom}px`;
         this._show();
     }
 
