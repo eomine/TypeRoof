@@ -20,11 +20,7 @@
 <li><a href="/TypeRoof/docs/development/">Developer Kit</a><ul><li><a href="/TypeRoof/docs/development/live/">Live Font Updates</a></li>
 <li><a href="/TypeRoof/live/README/">Serve Live Font Changes to TypeRoof</a></li>
 <li><a href="/TypeRoof/docs/development/glyph-groups/">How To: Extend Glyph-Groups</a></li>
-<li><a href="/TypeRoof/docs/development/planning/">Planning</a><ul><li><a href="/TypeRoof/docs/planning/videoproof-contextual/rewrite-plan/">Videoproof Contextual Rewrite Plan</a></li>
-<li><a href="/TypeRoof/docs/planning/metamodel/assessment-pre-typing/">Metamodel - Assessment Pre Strict Typing</a></li>
-<li><a href="/TypeRoof/docs/planning/metamodel/path-to-standalone/">Metamodel - Path to a Standalone Library</a></li>
-<li><a href="/TypeRoof/docs/planning/metamodel/assessment-post-typing/">Metamodel - Assessment Post Strict Typing</a></li>
-<li><a href="/TypeRoof/docs/planning/compositor/roadmap/">Compositor - Concepts and Roadmap</a></li></ul></li>
+<li><a href="/TypeRoof/docs/development/planning/">Planning</a></li>
 <li class="active"><a href="/TypeRoof/docs/development/module-granularity/">Module Granularity</a></li></ul></li></ul></li>
 <li><a href="/TypeRoof/docs/states_lib/">States Library</a><ul><li><a href="/TypeRoof/docs/states_lib/demos/">/demos</a></li></ul></li>
 <li><a href="/TypeRoof/README/">TypeRoof README</a></li></ul>
@@ -36,7 +32,7 @@
                 </ul>
             </div>
             <div class="typeroof-main">
-                <div class="typeroof-docs_content"><h1><a id="module-granularity" class="heading_anchor" href="#module-granularity" aria-hidden="true">#</a>Module Granularity</h1>
+                <div class="typeroof-docs_content"><p class="agent-created-note">** This file was created with an agent. **</p><h1><a id="module-granularity" class="heading_anchor" href="#module-granularity" aria-hidden="true">#</a>Module Granularity</h1>
 <blockquote>
 <p>Guideline for deciding how to split a file — or whether to split it at all.</p>
 </blockquote>
@@ -66,7 +62,7 @@
 <ul>
 <li><strong><code>index.typeroof.jsx</code></strong> — <code>Model</code>, <code>Controller</code>, public exports.</li>
 <li><strong>A small handful of engine files</strong> — properties, generators, PPS maps, defaults, synthetic values, state machinery.</li>
-<li><strong>One UI file per controller zone</strong> — matches what <code>TypeSpecRampController.zones</code> (or equivalent) already enumerates.</li>
+<li><strong>One UI file per controller zone</strong> — matches what <code>TypeStageController.zones</code> (or equivalent) already enumerates.</li>
 <li><strong>Optionally one <code>shared</code> file</strong> for UI helpers used by multiple zones.</li>
 </ul>
 <p>A 4000+ line single file is a signal to split.
@@ -105,12 +101,12 @@ A folder with 30+ files in flat layout is a signal to consolidate.</p>
 <ul>
 <li><code>**/*.jsx</code> is globally allow-listed → <strong>every <code>.typeroof.jsx</code> file is prettier-formatted</strong>, wherever it lives.</li>
 <li><code>**/*.mjs</code> is <strong>not</strong> globally allow-listed → <code>.mjs</code> files are skipped by prettier unless a directory-specific allow-list covers them.</li>
-<li><code>**/ramp/*.*</code> is a blanket allow-list → inside <code>lib/js/components/layouts/ramp/</code>, prettier formats <em>all</em> extensions, including <code>.mjs</code>.</li>
+<li><code>**/type-stage/*.*</code> is a blanket allow-list → inside <code>lib/js/components/layouts/type-stage/</code>, prettier formats <em>all</em> extensions, including <code>.mjs</code>.</li>
 </ul>
 <p>Consequences worth knowing:</p>
 <ul>
 <li><strong>For new UI files anywhere:</strong> <code>.typeroof.jsx</code> is the right extension on both grounds — JSX is available, and prettier covers the file.</li>
-<li><strong>For new engine files:</strong> <code>.mjs</code> is technically correct (no JSX needed). If prettier coverage matters for a given file, either (a) place it under a directory that’s allow-listed (e.g. <code>ramp/</code>), or (b) extend <code>.prettierignore</code> to cover it explicitly — do not rename <code>.mjs</code> → <code>.typeroof.jsx</code> purely to obtain prettier coverage, that conflates the two concerns.</li>
+<li><strong>For new engine files:</strong> <code>.mjs</code> is technically correct (no JSX needed). If prettier coverage matters for a given file, either (a) place it under a directory that’s allow-listed (e.g. <code>type-stage/</code>), or (b) extend <code>.prettierignore</code> to cover it explicitly — do not rename <code>.mjs</code> → <code>.typeroof.jsx</code> purely to obtain prettier coverage, that conflates the two concerns.</li>
 </ul>
 <h3><a id="tiny-decision-table" class="heading_anchor" href="#tiny-decision-table" aria-hidden="true">#</a>Tiny decision table</h3>
 <table>
