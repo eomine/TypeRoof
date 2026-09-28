@@ -1,0 +1,463 @@
+---json
+{
+  "permalink": "{{ page.filePathStem }}",
+  "layout": null
+}
+---
+{#-
+  Three rows of "HODnop01" at opsz 144, 14 and 8. The opsz 144 and 8
+  rows are built from the parametric axes and step through them one at
+  a time, see opsz144 and opsz8 below.
+-#}
+{%- set sample = "HODnop01" %}
+{%- set stageWidth = 1336 %}
+{%- set textWidth = 445 %}
+{%- set labelColor = [0, 128, 255] %}
+{%- set white = [255, 255, 255] %}
+{#-
+  Rows that step through the parametric axes, one settings block each.
+  label, y      actor label and vertical position
+  waitDuration  time before the row starts changing, at waitAxes
+  start         duration and full axes location the animation starts from;
+                its key order is the order the axes are written in
+  fadeIn        duration of the fade in, at the start location
+  changes       applied one after the other; every change is kept, so each
+                location builds on the previous one
+    label, duration, axes   the moment that animates to the changed axes
+    pause                   duration of the "pause" moment that holds them
+    isActive                marks that pause as the active key moment
+-#}
+{%- set opsz8 = {
+  "label": "opsz 8",
+  "x": 445,
+  "y": 550,
+  "waitDuration": 1,
+  "waitAxes": {"opsz": "14"},
+  "start": {"duration": 5, "axes": {
+    "XTSP": "0", "XOPQ": "90", "YOPQ": "66", "XTRA": "400",
+    "XSHA": "104", "YSHA": "50", "XSVA": "55", "YSVA": "165", "YTLC": "511"
+  } },
+  "fadeIn": 3,
+  "changes": [
+    {"label": "XOPQ", "duration": 2, "axes": {"XOPQ": "112"}, "pause": 1},
+    {"label": "YOPQ", "duration": 2, "axes": {"YOPQ": "91"}, "pause": 1},
+    {"label": "XTRA", "duration": 2, "axes": {"XTRA": "400"}, "pause": 1},
+    {"label": "YTLC", "duration": 2, "axes": {"YTLC": "536"}, "pause": 1},
+    {"label": "Serifs", "duration": 2, "axes": {"XSHA": "104", "YSHA": "75", "XSVA": "80", "YSVA": "149"}, "pause": 1, "isActive": true},
+    {"label": "XTSP", "duration": 2, "axes": {"XTSP": "0"}, "pause": 23}
+  ]
+} %}
+{#- a copy of text 8 to start from: adjust its axes values and timings -#}
+{%- set opsz144 = {
+  "label": "opsz 144",
+  "x": 445,
+  "y": 150,
+  "waitDuration": 1,
+  "waitAxes": {"opsz": "14"},
+  "start": {"duration": 25, "axes": {
+    "XTSP": "0", "XOPQ": "90", "YOPQ": "66", "XTRA": "400",
+    "XSHA": "104", "YSHA": "50", "XSVA": "55", "YSVA": "165", "YTLC": "511"
+  } },
+  "fadeIn": 3,
+  "changes": [
+    {"label": "XOPQ", "duration": 2, "axes": {"XOPQ": "84"}, "pause": 1},
+    {"label": "YOPQ", "duration": 2, "axes": {"YOPQ": "16"}, "pause": 1},
+    {"label": "XTRA", "duration": 2, "axes": {"XTRA": "348"}, "pause": 1},
+    {"label": "YTLC", "duration": 2, "axes": {"YTLC": "471"}, "pause": 1},
+    {"label": "Serifs", "duration": 2, "axes": {"XSHA": "82", "YSHA": "12", "XSVA": "14", "YSVA": "153"}, "pause": 1, "isActive": true},
+    {"label": "XTSP", "duration": 2, "axes": {"XTSP": "0"}, "pause": 3}
+  ]
+} %}
+{#- condensed -#}
+{%- set wdthCondensed = {
+  "label": "wdth condensed",
+  "x": 445,
+  "y": 550,
+  "waitDuration": 1,
+  "waitAxes": {"opsz": "14"},
+  "start": {"duration": 45, "axes": {
+    "XTSP": "0", "XOPQ": "90", "YOPQ": "66", "XTRA": "400",
+    "XSHA": "104", "YSHA": "50", "XSVA": "55", "YSVA": "165", "YTLC": "511"
+  } },
+  "fadeIn": 3,
+  "changes": [
+    {"label": "XOPQ", "duration": 2, "axes": {"XOPQ": "85"}, "pause": 1},
+    {"label": "YOPQ", "duration": 2, "axes": {"YOPQ": "64"}, "pause": 1},
+    {"label": "XTRA", "duration": 2, "axes": {"XTRA": "220"}, "pause": 1},
+    {"label": "YTLC", "duration": 2, "axes": {"YTLC": "508"}, "pause": 1},
+    {"label": "Serifs", "duration": 2, "axes": {"XSHA": "79", "YSHA": "48", "XSVA": "55", "YSVA": "155"}, "pause": 1, "isActive": true},
+    {"label": "XTSP", "duration": 2, "axes": {"XTSP": "0"}, "pause": 143}
+  ]
+} %}
+{#- extended -#}
+{%- set wdthExtended = {
+  "label": "wdth extended",
+  "x": 445,
+  "y": 150,
+  "waitDuration": 1,
+  "waitAxes": {"opsz": "14"},
+  "start": {"duration": 65, "axes": {
+    "XTSP": "0", "XOPQ": "90", "YOPQ": "66", "XTRA": "400",
+    "XSHA": "104", "YSHA": "50", "XSVA": "55", "YSVA": "165", "YTLC": "511"
+  } },
+  "fadeIn": 3,
+  "changes": [
+    {"label": "XOPQ", "duration": 2, "axes": {"XOPQ": "92"}, "pause": 1},
+    {"label": "YOPQ", "duration": 2, "axes": {"YOPQ": "66"}, "pause": 1},
+    {"label": "XTRA", "duration": 2, "axes": {"XTRA": "591"}, "pause": 1},
+    {"label": "YTLC", "duration": 2, "axes": {"YTLC": "510"}, "pause": 1},
+    {"label": "Serifs", "duration": 2, "axes": {"XSHA": "124", "YSHA": "50", "XSVA": "65", "YSVA": "165"}, "pause": 1, "isActive": true},
+    {"label": "XTSP", "duration": 2, "axes": {"XTSP": "0"}, "pause": 123}
+  ]
+} %}
+{#- light -#}
+{%- set wghtLight = {
+  "label": "wght light",
+  "x": 0,
+  "y": 350,
+  "waitDuration": 1,
+  "waitAxes": {"opsz": "14"},
+  "start": {"duration": 85, "axes": {
+    "XTSP": "0", "XOPQ": "90", "YOPQ": "66", "XTRA": "400",
+    "XSHA": "104", "YSHA": "50", "XSVA": "55", "YSVA": "165", "YTLC": "511"
+  } },
+  "fadeIn": 3,
+  "changes": [
+    {"label": "XOPQ", "duration": 2, "axes": {"XOPQ": "40"}, "pause": 1},
+    {"label": "YOPQ", "duration": 2, "axes": {"YOPQ": "31"}, "pause": 1},
+    {"label": "XTRA", "duration": 2, "axes": {"XTRA": "470"}, "pause": 1},
+    {"label": "YTLC", "duration": 2, "axes": {"YTLC": "510"}, "pause": 1},
+    {"label": "Serifs", "duration": 2, "axes": {"XSHA": "114", "YSHA": "24", "XSVA": "27", "YSVA": "163"}, "pause": 1, "isActive": true},
+    {"label": "XTSP", "duration": 2, "axes": {"XTSP": "0"}, "pause": 103}
+  ]
+} %}
+{#- black -#}
+{%- set wghtBlack = {
+  "label": "wght black",
+  "x": 910,
+  "y": 350,
+  "waitDuration": 1,
+  "waitAxes": {"opsz": "14"},
+  "start": {"duration": 105, "axes": {
+    "XTSP": "0", "XOPQ": "90", "YOPQ": "66", "XTRA": "400",
+    "XSHA": "104", "YSHA": "50", "XSVA": "55", "YSVA": "165", "YTLC": "511"
+  } },
+  "fadeIn": 3,
+  "changes": [
+    {"label": "XOPQ", "duration": 2, "axes": {"XOPQ": "250"}, "pause": 1},
+    {"label": "YOPQ", "duration": 2, "axes": {"YOPQ": "81"}, "pause": 1},
+    {"label": "XTRA", "duration": 2, "axes": {"XTRA": "250"}, "pause": 1},
+    {"label": "YTLC", "duration": 2, "axes": {"YTLC": "536"}, "pause": 1},
+    {"label": "Serifs", "duration": 2, "axes": {"XSHA": "89", "YSHA": "65", "XSVA": "73", "YSVA": "143"}, "pause": 1, "isActive": true},
+    {"label": "XTSP", "duration": 2, "axes": {"XTSP": "0"}, "pause": 83}
+  ]
+} %}
+
+{#- extended light -#}
+{%- set extendedLight = {
+  "label": "extended light",
+  "x": 0,
+  "y": 150,
+  "waitDuration": 1,
+  "waitAxes": {"opsz": "14"},
+  "start": {"duration": 125, "axes": {
+    "XTSP": "0", "XOPQ": "90", "YOPQ": "66", "XTRA": "400",
+    "XSHA": "104", "YSHA": "50", "XSVA": "55", "YSVA": "165", "YTLC": "511"
+  } },
+  "fadeIn": 3,
+  "changes": [
+    {"label": "XOPQ", "duration": 2, "axes": {"XOPQ": "42"}, "pause": 1},
+    {"label": "YOPQ", "duration": 2, "axes": {"YOPQ": "31"}, "pause": 1},
+    {"label": "XTRA", "duration": 2, "axes": {"XTRA": "661"}, "pause": 1},
+    {"label": "YTLC", "duration": 2, "axes": {"YTLC": "510"}, "pause": 1},
+    {"label": "Serifs", "duration": 2, "axes": {"XSHA": "134", "YSHA": "24", "XSVA": "32", "YSVA": "163"}, "pause": 1, "isActive": true},
+    {"label": "XTSP", "duration": 2, "axes": {"XTSP": "0"}, "pause": 63}
+  ]
+} %}
+{#- extended black -#}
+{%- set extendedBlack = {
+  "label": "extended black",
+  "x": 910,
+  "y": 150,
+  "waitDuration": 1,
+  "waitAxes": {"opsz": "14"},
+  "start": {"duration": 145, "axes": {
+    "XTSP": "0", "XOPQ": "90", "YOPQ": "66", "XTRA": "400",
+    "XSHA": "104", "YSHA": "50", "XSVA": "55", "YSVA": "165", "YTLC": "511"
+  } },
+  "fadeIn": 3,
+  "changes": [
+    {"label": "XOPQ", "duration": 2, "axes": {"XOPQ": "252"}, "pause": 1},
+    {"label": "YOPQ", "duration": 2, "axes": {"YOPQ": "81"}, "pause": 1},
+    {"label": "XTRA", "duration": 2, "axes": {"XTRA": "441"}, "pause": 1},
+    {"label": "YTLC", "duration": 2, "axes": {"YTLC": "536"}, "pause": 1},
+    {"label": "Serifs", "duration": 2, "axes": {"XSHA": "109", "YSHA": "65", "XSVA": "83", "YSVA": "143"}, "pause": 1, "isActive": true},
+    {"label": "XTSP", "duration": 2, "axes": {"XTSP": "0"}, "pause": 43}
+  ]
+} %}
+{#- condensed light -#}
+{%- set condensedLight = {
+  "label": "condensed light",
+  "x": 0,
+  "y": 550,
+  "waitDuration": 1,
+  "waitAxes": {"opsz": "14"},
+  "start": {"duration": 165, "axes": {
+    "XTSP": "0", "XOPQ": "90", "YOPQ": "66", "XTRA": "400",
+    "XSHA": "104", "YSHA": "50", "XSVA": "55", "YSVA": "165", "YTLC": "511"
+  } },
+  "fadeIn": 3,
+  "changes": [
+    {"label": "XOPQ", "duration": 2, "axes": {"XOPQ": "35"}, "pause": 1},
+    {"label": "YOPQ", "duration": 2, "axes": {"YOPQ": "29"}, "pause": 1},
+    {"label": "XTRA", "duration": 2, "axes": {"XTRA": "290"}, "pause": 1},
+    {"label": "YTLC", "duration": 2, "axes": {"YTLC": "508"}, "pause": 1},
+    {"label": "Serifs", "duration": 2, "axes": {"XSHA": "89", "YSHA": "22", "XSVA": "27", "YSVA": "156"}, "pause": 1, "isActive": true},
+    {"label": "XTSP", "duration": 2, "axes": {"XTSP": "0"}, "pause": 23}
+  ]
+} %}
+{#- condensed black -#}
+{%- set condensedBlack = {
+  "label": "condensed black",
+  "x": 910,
+  "y": 550,
+  "waitDuration": 1,
+  "waitAxes": {"opsz": "14"},
+  "start": {"duration": 185, "axes": {
+    "XTSP": "0", "XOPQ": "90", "YOPQ": "66", "XTRA": "400",
+    "XSHA": "104", "YSHA": "50", "XSVA": "55", "YSVA": "165", "YTLC": "511"
+  } },
+  "fadeIn": 3,
+  "changes": [
+    {"label": "XOPQ", "duration": 2, "axes": {"XOPQ": "246"}, "pause": 1},
+    {"label": "YOPQ", "duration": 2, "axes": {"YOPQ": "79"}, "pause": 1},
+    {"label": "XTRA", "duration": 2, "axes": {"XTRA": "75"}, "pause": 1},
+    {"label": "YTLC", "duration": 2, "axes": {"YTLC": "534"}, "pause": 1},
+    {"label": "Serifs", "duration": 2, "axes": {"XSHA": "32", "YSHA": "63", "XSVA": "78", "YSVA": "143"}, "pause": 1, "isActive": true},
+    {"label": "XTSP", "duration": 2, "axes": {"XTSP": "0"}, "pause": 3}
+  ]
+} %}
+{%- macro color(rgb, alpha) -%}
+{
+                "instance": {
+                  "R": "{{ rgb[0] }}",
+                  "G": "{{ rgb[1] }}",
+                  "B": "{{ rgb[2] }}"{% if alpha %},
+                  "alpha": "{{ alpha }}"{% endif %}
+                },
+                "colorTypeKey": "RGB"
+              }
+{%- endmacro %}
+{%- macro pairs(items) -%}
+{%- if items | length == 1 -%}
+[["{{ items[0][0] }}", "{{ items[0][1] }}"]]
+{%- else -%}
+[
+{%- for item in items %}
+                ["{{ item[0] }}", "{{ item[1] }}"]{{ "," if not loop.last }}
+{%- endfor %}
+              ]
+{%- endif -%}
+{%- endmacro %}
+{%- macro axesOf(location) -%}
+{%- set items = [] %}
+{%- for axis, value in location %}{% set _ = items.push([axis, value]) %}{% endfor %}
+{{- pairs(items) -}}
+{%- endmacro %}
+{%- macro label(name, text, y) %}
+      {
+        "instance": {
+          "label": "{{ name }}",
+          "keyMoments": [
+            {
+              "label": "Key Moment 1",
+              "duration": "1",
+              "easing": "linear",
+              "isActive": "1",
+              "numericProperties": {{ pairs([["y", y], ["x", 618], ["width", 100]]) }},
+              "textColor": {{ color(labelColor, "0.00000") }},
+              "textRun": "{{ text }}",
+              "textAlign": "center"
+            }
+          ]
+        },
+        "actorTypeKey": "LineOfTextActorModel"
+      }
+{%- endmacro %}
+{%- macro axesRow(row, fadeOut = false) %}
+{#- locations[i] is the location after changes[i - 1]; a list, because
+    a {% set %} inside a for loop does not outlive its iteration -#}
+{%- set locations = [row.start.axes] %}
+{%- for change in row.changes %}
+  {%- set _ = locations.push(locations | last | merge(change.axes)) %}
+{%- endfor %}
+      {
+        "instance": {
+          "label": "{{ row.label }}",
+          "keyMoments": [
+            {
+              "label": "wait",
+              "duration": "{{ row.waitDuration }}",
+              "easing": "linear",
+              "numericProperties": {{ pairs([["x", row.x], ["y", row.y], ["width", textWidth]]) }},
+              "axesLocations": {{ axesOf(row.waitAxes) }},
+              "fontSize": "40",
+              "textColor": {{ color(white, "0.00000") }},
+              "textRun": "{{ sample }}",
+              "textAlign": "center"
+            },
+            {
+              "label": "start",
+              "duration": "{{ row.start.duration }}",
+              "easing": "linear",
+              "numericProperties": {{ pairs([["y", row.y], ["width", textWidth]]) }},
+              "axesLocations": {{ axesOf(row.start.axes) }},
+              "textColor": {{ color(white, "0.00000") }}
+            },
+            {
+              "label": "fade in",
+              "duration": "{{ row.fadeIn }}",
+              "easing": "linear",
+              "axesLocations": {{ axesOf(row.start.axes) }},
+              "textColor": {{ color(white, "100.00000") }}
+            },
+{%- for change in row.changes %}
+            {
+              "label": "{{ change.label }}",
+              "duration": "{{ change.duration }}",
+              "easing": "linear",
+              "axesLocations": {{ axesOf(locations[loop.index]) }}
+            },
+            {
+              "label": "pause",
+              "duration": "{{ change.pause }}",
+              "easing": "linear",
+              {%- if change.isActive %}
+              "isActive": "1",{% endif %}
+              "axesLocations": {{ axesOf(locations[loop.index]) }},
+              "textColor": {{ color(white, "100.00000") }}
+            }{{ "," if (not loop.last) or fadeOut }} 
+{%- endfor %}
+{%- if fadeOut -%}
+            {
+              "label": "fade out",
+              "duration": "{{ row.fadeIn }}",
+              "easing": "linear",
+              "axesLocations": {{ axesOf(locations | last) }},
+              "textColor": {{ color(white, "0.00000") }}
+            },
+            {
+              "label": "stay",
+              "duration": "157",
+              "easing": "linear",
+              "axesLocations": {{ axesOf(locations | last) }},
+              "textColor": {{ color(white, "0.00000") }}
+            }
+{%- endif %}
+          ]
+        },
+        "actorTypeKey": "LineOfTextActorModel"
+      }
+{%- endmacro -%}
+{
+  "activeState": {
+    "t": "1",
+    "duration": "10",
+    "keyMoments": [
+      {
+        "label": "Key Moment 1",
+        "duration": "1",
+        "easing": "linear",
+        "isActive": "1",
+        "textColor": {
+          "instance": {
+            "R": "255",
+            "G": "255",
+            "B": "255"
+          },
+          "colorTypeKey": "RGB"
+        },
+        "stageBackgroundColor": {
+          "instance": {
+            "R": "0",
+            "G": "0",
+            "B": "0"
+          },
+          "colorTypeKey": "RGB"
+        }
+      }
+    ],
+    "activeActors": [
+      {
+        "instance": {
+          "label": "title",
+          "keyMoments": [
+            {
+              "label": "Key Moment 1",
+              "duration": "1",
+              "easing": "linear",
+              "isActive": "1",
+              "numericProperties": {{ pairs([["x", 30], ["y", 30]]) }},
+              "textColor": {{ color([255, 200, 0], "0.00000") }},
+              "textRun": "Animation from Amstelvar Regular to opsz 8 and 144."
+            }
+          ]
+        },
+        "actorTypeKey": "LineOfTextActorModel"
+      },
+      {{- label("label 144", "Size 144", 100) }},
+      {{- axesRow(opsz144, true) }},
+      {{- label("label 14", "Size 14", 300) }},
+      {
+        "instance": {
+          "label": "text 14",
+          "keyMoments": [
+            {
+              "label": "start",
+              "duration": "1",
+              "easing": "linear",
+              "numericProperties": {{ pairs([["x", 445], ["y", 350], ["width", textWidth]]) }},
+              "axesLocations": [["opsz", "14"]],
+              "fontSize": "40",
+              "textColor": {{ color(white, "0.00000") }},
+              "textRun": "{{ sample }}",
+              "textAlign": "center"
+            },
+            {
+              "label": "fade in",
+              "duration": "3",
+              "easing": "linear",
+              "textColor": {{ color(white, "100.00000") }}
+            },
+            {
+              "label": "stay",
+              "duration": "205",
+              "easing": "linear",
+              "isActive": "1"
+            }
+          ]
+        },
+        "actorTypeKey": "LineOfTextActorModel"
+      },
+      {{- label("label 8", "Size 8", 500) }},
+      {{- axesRow(opsz8, true) }},
+      {{- axesRow(wdthCondensed) }},
+      {{- axesRow(wdthExtended) }},
+      {{- axesRow(wghtLight) }},
+      {{- axesRow(wghtBlack) }},
+      {{- axesRow(extendedLight) }},
+      {{- axesRow(extendedBlack) }},
+      {{- axesRow(condensedLight) }},
+      {{- axesRow(condensedBlack) }}
+    ],
+    "width": "{{ stageWidth }}",
+    "height": "800",
+    "zoomLevel": {
+      "type": "app-default",
+      "scaling": "100.00000"
+    },
+    "editingActor": "./6"
+  },
+  "activeLayoutKey": "MotionStage",
+  "activeFontKey": "from-url AmstelvarA2 Roman wght400 Version_0-001"
+}
